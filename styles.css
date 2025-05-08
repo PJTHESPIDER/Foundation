@@ -30,7 +30,7 @@ header {
 
 .nav-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-grow: 1;
 }
 
