@@ -115,7 +115,7 @@ footer {
     padding: 10px 0;
 }
 
-.climate-section {
+.issues-section {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -123,11 +123,11 @@ footer {
     flex-direction: row-reverse;
 }
 
-.climate-content {
+.issues-content {
     flex: 1;
 }
 
-.climate-section img {
+.issues-section img {
     max-width: 50%;
     height: auto;
 }
