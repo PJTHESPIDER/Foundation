@@ -108,6 +108,11 @@ section {
     margin-bottom: 20px;
 }
 
+h2 {
+    text-decoration: underline;
+    text-decoration-color: rgb(54, 196, 196);
+}
+
 footer {
     background: #333;
     color: #fff;
