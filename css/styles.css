@@ -45,6 +45,8 @@ nav ul {
     padding: 0;
     display: flex;
     margin: 0;
+    display: flex; /* Make list item a flex container */
+    align-items: center; /* Vertically center content (the link) */
 }
 
 nav ul li {
@@ -135,4 +137,278 @@ footer {
 .issues-section img {
     max-width: 50%;
     height: auto;
+}
+
+/* Styles for mission section */
+
+.mission-section {
+    padding: 4rem 0; /* Equivalent to py-16 */
+    background-color: #2d3748; /* A dark grey, similar to bg-gray-800 */
+    color: white;
+}
+
+.mission-container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Equivalent to px-6 */
+}
+
+.mission-header {
+    text-align: center;
+    margin-bottom: 3rem; /* Equivalent to mb-12 */
+}
+
+.mission-header h2 {
+    font-size: 2.25rem; /* Equivalent to text-3xl */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+    text-decoration: none; /* Remove underline from existing h2 style */
+}
+
+.mission-header p {
+    max-width: 42rem; /* Equivalent to max-w-2xl */
+    margin: 0 auto;
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    color: #cbd5e0; /* A light grey, similar to text-gray-400 */
+}
+
+.mission-grid {
+    display: flex; /* Using flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 2rem; /* Equivalent to gap-8 */
+    justify-content: center; /* Center items when they don't fill the row */
+}
+
+.mission-item {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, basis - allows items to grow and shrink, with a preferred width */
+    padding: 1.5rem; /* Equivalent to p-6 */
+    text-align: center;
+}
+
+.mission-icon {
+    width: 4rem; /* Equivalent to w-16 */
+    height: 4rem; /* Equivalent to h-16 */
+    color: #38b2ac; /* A teal color, similar to text-accent-teal - you might need to adjust this color */
+    margin: 0 auto 1rem auto; /* Center and equivalent to mb-4 */
+}
+
+.mission-item h3 {
+    font-size: 1.25rem; /* Equivalent to text-xl */
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: white;
+    margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+    text-decoration: none; /* Remove underline */
+}
+
+.mission-item p {
+    color: #cbd5e0; /* A light grey, similar to text-gray-400 */
+}
+
+/* Optional: Media query for larger screens to ensure 3 columns */
+@media (min-width: 768px) { /* Equivalent to md: in Tailwind */
+    .mission-section {
+        padding: 6rem 0; /* Equivalent to md:py-24 */
+    }
+
+    .mission-header {
+        margin-bottom: 4rem; /* Equivalent to md:mb-16 */
+    }
+
+    .mission-grid {
+        flex-wrap: nowrap; /* Prevent wrapping on larger screens if you want exactly 3 columns */
+        justify-content: space-between; /* Distribute space between items */
+    }
+
+    .mission-item {
+         flex-basis: calc(33.333% - 2rem/3 * 2); /* Calculate basis for 3 items with gap */
+    }
+}
+
+/* Styles for the new Focus Areas section */
+#focus-areas {
+    padding: 4rem 0; /* py-16 */
+    background-color: #1a202c; /* bg-gray-900 */
+    color: white;
+}
+
+.focus-areas-container {
+    max-width: 1200px; /* container mx-auto */
+    margin: 0 auto; /* mx-auto */
+    padding: 0 1.5rem; /* px-6 */
+}
+
+.focus-areas-header {
+    text-align: center; /* text-center */
+    margin-bottom: 3rem; /* mb-12 */
+}
+
+@media (min-width: 768px) { /* md: */
+    .focus-areas-header {
+        margin-bottom: 4rem; /* md:mb-16 */
+    }
+}
+
+.focus-areas-header h2 {
+    font-size: 2.25rem; /* text-3xl */
+    font-weight: bold; /* font-bold */
+    color: white; /* text-white - redundant with parent but good for clarity */
+    margin-bottom: 1rem; /* mb-4 */
+    text-decoration: none; /* Override default h2 underline */
+}
+
+@media (min-width: 768px) { /* md: */
+     .focus-areas-header h2 {
+        font-size: 2.5rem; /* md:text-4xl */
+     }
+}
+
+
+.focus-areas-header p {
+    color: #a0aec0; /* text-gray-400 */
+    max-width: 42rem; /* max-w-2xl */
+    margin: 0 auto; /* mx-auto */
+    font-size: 1.125rem; /* text-lg */
+}
+
+.focus-areas-grid {
+    display: grid; /* grid */
+    gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 768px) { /* md: */
+    .focus-areas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* md:grid-cols-2 */
+    }
+}
+
+@media (min-width: 1024px) { /* lg: */
+    .focus-areas-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* lg:grid-cols-3 */
+    }
+}
+
+.focus-area-card {
+    background-color: #2d3748; /* bg-gray-800 */
+    padding: 2rem; /* p-8 */
+    border-radius: 0.75rem; /* rounded-xl (assuming 12px) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+.focus-area-icon {
+    color: #68d391; /* text-secondary-green - chose a greenish color */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.focus-area-icon svg {
+    width: 3rem; /* w-12 (assuming 1 unit = 0.25rem, 12 * 0.25 = 3) */
+    height: 3rem; /* h-12 */
+}
+
+
+.focus-area-card h3 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    color: white; /* text-white */
+    margin-bottom: 0.75rem; /* mb-3 (assuming 1 unit = 0.25rem, 3 * 0.25 = 0.75) */
+    text-decoration: none; /* Remove underline */
+}
+
+.focus-area-card p {
+    color: #a0aec0; /* text-gray-400 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.focus-area-card a {
+    color: #38b2ac; /* text-accent-teal - chose a teal color */
+    font-weight: 500; /* font-medium */
+    text-decoration: none; /* Initial state */
+}
+
+.focus-area-card a:hover {
+    text-decoration: underline; /* hover:underline */
+}
+
+/* Styles for the new Hero section */
+.hero-section {
+    background-color: rgb(8, 61, 74); /* Using the same dark grey as the mission section background for consistency */
+    color: white; /* text-white */
+    padding-top: 5rem; /* py-20 (20 * 0.25 = 5) */
+    padding-bottom: 5rem; /* py-20 */
+    display: flex; /* To center content vertically */
+    align-items: center; /* To center content vertically */
+}
+
+@media (min-width: 768px) { /* md: */
+    .hero-section {
+        padding-top: 8rem; /* md:py-32 (32 * 0.25 = 8) */
+        padding-bottom: 8rem; /* md:py-32 */
+    }
+}
+
+.hero-container {
+    max-width: 1200px; /* container */
+    margin: 0 auto; /* mx-auto */
+    padding: 0 1.5rem; /* px-6 */
+    text-align: center; /* text-center */
+}
+
+.hero-container h1 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: bold; /* font-bold */
+    margin-bottom: 1.5rem; /* mb-6 (6 * 0.25 = 1.5) */
+    color: white; /* text-white - redundant but clear */
+    text-decoration: none; /* Remove underline from existing h2 style */
+}
+
+@media (min-width: 768px) { /* md: */
+    .hero-container h1 {
+        font-size: 3.75rem; /* md:text-6xl */
+    }
+}
+
+.hero-container p {
+    font-size: 1.125rem; /* text-lg */
+    margin-bottom: 2.5rem; /* mb-10 (10 * 0.25 = 2.5) */
+    max-width: 48rem; /* max-w-3xl */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+    color: #a0aec0; /* text-gray-400 */
+}
+
+@media (min-width: 768px) { /* md: */
+    .hero-container p {
+        font-size: 1.25rem; /* md:text-xl */
+    }
+}
+
+.hero-button {
+    background-color: #38b2ac; /* bg-accent-teal */
+    color: white; /* text-white */
+    font-weight: 600; /* font-semibold */
+    padding: 0.75rem 2rem; /* px-8 py-3 (3*0.25=0.75, 8*0.25=2) */
+    border-radius: 0.5rem; /* rounded-lg (assuming 8px) */
+    font-size: 1.125rem; /* text-lg */
+    text-decoration: none; /* Remove underline */
+    transition-property: background-color, color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; /* transition */
+    transition-duration: 300ms; /* duration-300 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    display: inline-block; /* Ensure padding and margin work correctly */
+}
+
+.hero-button:hover {
+    background-color: #319795; /* hover:bg-accent-teal-dark - a slightly darker teal */
+}
+
+.nav-donate-button {
+    background-color: #38b2ac; /* bg-accent-teal */
+    color: white; /* text-white */
+    font-weight: 600; /* font-semibold */
+    padding: 0.25rem 1.5rem; /* px-8 py-3 (3*0.25=0.75, 8*0.25=2) */
+    border-radius: 0.5rem; /* rounded-lg (assuming 8px) */
+    font-size: 1.125rem; /* text-lg */
+    text-decoration: none; /* Remove underline */
+    transition-property: background-color, color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; /* transition */
+    transition-duration: 300ms; /* duration-300 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    display: inline-block; /* Ensure padding and margin work correctly */
 }
