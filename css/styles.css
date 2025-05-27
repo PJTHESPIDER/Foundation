@@ -382,7 +382,7 @@ footer {
 }
 
 .hero-button {
-    background-color: #38b2ac; /* bg-accent-teal */
+    background-color: #00857b; /* bg-accent-teal */
     color: white; /* text-white */
     font-weight: 600; /* font-semibold */
     padding: 0.75rem 2rem; /* px-8 py-3 (3*0.25=0.75, 8*0.25=2) */
@@ -400,7 +400,7 @@ footer {
 }
 
 .nav-donate-button {
-    background-color: #38b2ac; /* bg-accent-teal */
+    background-color: rgb(0, 133, 123); /* bg-accent-teal */
     color: white; /* text-white */
     font-weight: 600; /* font-semibold */
     padding: 0.25rem 1.5rem; /* px-8 py-3 (3*0.25=0.75, 8*0.25=2) */
