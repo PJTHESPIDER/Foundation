@@ -71,13 +71,15 @@ nav ul li a {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgb(54, 196, 196);
+    background-color: rgb(0, 133, 123);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     list-style: none;
     padding: 0;
     margin-top: 0;
+    border-radius: 0.5rem; /* Add rounded corners */
+    overflow: hidden; /* Prevent child hover from breaking border radius */
 }
 
 .dropdown-content li {
@@ -93,6 +95,7 @@ nav ul li a {
 
 .dropdown-content li a:hover {
     background-color: #555;
+    border-radius: 0; /* Prevent individual items from breaking the parent border radius */
 }
 
 .dropdown:hover .dropdown-content {
@@ -397,6 +400,8 @@ footer {
 
 .hero-button:hover {
     background-color: #319795; /* hover:bg-accent-teal-dark - a slightly darker teal */
+    text-decoration: underline;
+    text-decoration-color: #fff !important; /* Keep underline white for hero button */
 }
 
 .nav-donate-button {
@@ -414,5 +419,17 @@ footer {
 }
 
 .nav-donate-button:hover {
-    background-color: #319795; /* Match hero-button hover color */
+    background-color: #319795; /* hover:bg-accent-teal-dark - a slightly darker teal */
+    text-decoration: underline;
+    text-decoration-color: #fff !important; /* Force underline to stay white */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    text-decoration-color: #00857b; /* Match donate button color */
+}
+
+.nav-container ul li a:hover{
+    text-decoration: underline;
+    text-decoration-color: #00857b; /* Match donate button color */
 }
