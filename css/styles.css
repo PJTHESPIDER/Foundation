@@ -412,3 +412,7 @@ footer {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
     display: inline-block; /* Ensure padding and margin work correctly */
 }
+
+.nav-donate-button:hover {
+    background-color: #319795; /* Match hero-button hover color */
+}
