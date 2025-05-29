@@ -295,6 +295,13 @@ footer {
     padding: 2rem; /* p-8 */
     border-radius: 0.75rem; /* rounded-xl (assuming 12px) */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.focus-area-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18), 0 6px 12px rgba(0,0,0,0.12);
+    z-index: 2;
 }
 
 .focus-area-icon {
@@ -432,4 +439,56 @@ a:hover {
 .nav-container ul li a:hover{
     text-decoration: underline;
     text-decoration-color: #00857b; /* Match donate button color */
+}
+
+.info-hero-section {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    background-color: #2d3748; /* bg-gray-800 */
+}
+
+.info-hero-section .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-align: center;
+}
+
+.info-hero-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .info-hero-section h2 {
+        font-size: 2.5rem;
+    }
+    .info-hero-section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.info-hero-section p {
+    color: #a0aec0;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+.info-hero-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.info-hero-section p:last-child {
+    margin-bottom: 0;
 }
