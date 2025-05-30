@@ -492,3 +492,70 @@ a:hover {
 .info-hero-section p:last-child {
     margin-bottom: 0;
 }
+
+.info-card-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: #2d3748;
+    color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    padding: 2rem 2rem 1.5rem 2rem;
+    max-width: 400px;
+    min-width: 260px;
+    flex: 1 1 300px;
+    margin: 0 auto;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+}
+
+.info-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #38b2ac;
+    text-decoration: none;
+}
+
+.info-card p {
+    color: #cbd5e0;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-card-section .info-card:first-child {
+    background: linear-gradient(135deg, #38b2ac 0%, #2d3748 100%);
+    color: #fff;
+    border: 2px solid #38b2ac;
+    box-shadow: 0 8px 32px rgba(56,178,172,0.25), 0 4px 16px rgba(0,0,0,0.18);
+    transform: scale(1.04);
+    z-index: 1;
+    position: relative;
+}
+
+.info-card-section .info-card:first-child h2 {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 700px) {
+    .info-card-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .info-card {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
