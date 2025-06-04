@@ -21,6 +21,7 @@ header {
     align-items: center;
     box-sizing: border-box;
     color: white;
+    z-index: 100; /* Ensure header is above other content */
 }
 
 .logo {
@@ -74,7 +75,7 @@ nav ul li a {
     background-color: rgb(0, 133, 123);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 101; /* Ensure dropdown content is above header */
     list-style: none;
     padding: 0;
     margin-top: 0;
@@ -539,9 +540,16 @@ a:hover {
     color: #fff;
     border: 2px solid #38b2ac;
     box-shadow: 0 8px 32px rgba(56,178,172,0.25), 0 4px 16px rgba(0,0,0,0.18);
-    transform: scale(1.04);
+    transform: scale(1.02);
     z-index: 1;
     position: relative;
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+    flex: 0 0 100%;
+    margin: 0; /* Ensure no margin */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    text-align: center;
 }
 
 .info-card-section .info-card:first-child h2 {
@@ -557,5 +565,9 @@ a:hover {
     .info-card {
         max-width: 100%;
         min-width: 0;
+    }
+    .info-card-section .info-card:first-child {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
