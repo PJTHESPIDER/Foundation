@@ -500,6 +500,8 @@ a:hover {
     gap: 2rem;
     justify-content: center;
     margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .info-card {
@@ -555,6 +557,26 @@ a:hover {
 .info-card-section .info-card:first-child h2 {
     color: #fff;
     text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+@media (min-width: 768px) {
+    .info-card-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+    .info-card-section .info-card:first-child {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: none;
+    }
+    .info-card-section .info-card:not(:first-child) {
+        flex: 1 1 calc((100% - 4rem) / 3);
+        max-width: calc((100% - 4rem) / 3);
+        margin: 0;
+        box-sizing: border-box;
+    }
 }
 
 @media (max-width: 700px) {
