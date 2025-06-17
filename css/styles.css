@@ -221,11 +221,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Pixelify Sans', sans-serif;
 }
 
-h2 {
-    text-decoration: underline;
-    text-decoration-color: rgb(54, 196, 196);
-}
-
 footer {
     background: #333;
     color: #fff;
@@ -253,66 +248,90 @@ footer {
 /* Styles for mission section */
 
 .mission-section {
-    padding: 4rem 0; /* Equivalent to py-16 */
-    background-color: #2d3748; /* A dark grey, similar to bg-gray-800 */
+    padding: 4rem 0;
+    background-color: #1a202c; /* Match focus section bg */
     color: white;
 }
 
 .mission-container {
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem; /* Equivalent to px-6 */
+    padding: 0 1.5rem;
 }
 
 .mission-header {
     text-align: center;
-    margin-bottom: 3rem; /* Equivalent to mb-12 */
+    margin-bottom: 3rem;
 }
 
 .mission-header h2 {
-    font-size: 2.25rem; /* Equivalent to text-3xl */
+    font-size: 2.25rem;
     font-weight: bold;
-    margin-bottom: 1rem; /* Equivalent to mb-4 */
-    text-decoration: none; /* Remove underline from existing h2 style */
+    color: white;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 133, 123, 0.8); /* Underline like focus section */
+    padding-bottom: 0.5rem;
+    text-decoration: none;
 }
 
 .mission-header p {
-    max-width: 42rem; /* Equivalent to max-w-2xl */
+    color: #a0aec0;
+    max-width: 42rem;
     margin: 0 auto;
-    font-size: 1.125rem; /* Equivalent to text-lg */
-    color: #cbd5e0; /* A light grey, similar to text-gray-400 */
+    font-size: 1.125rem;
 }
 
 .mission-grid {
-    display: flex; /* Using flexbox for layout */
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    gap: 2rem; /* Equivalent to gap-8 */
-    justify-content: center; /* Center items when they don't fill the row */
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .mission-section {
+        padding: 6rem 0;
+    }
+    .mission-header {
+        margin-bottom: 4rem;
+    }
+    .mission-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .mission-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .mission-item {
-    flex: 1 1 300px; /* Flex-grow, flex-shrink, basis - allows items to grow and shrink, with a preferred width */
-    padding: 1.5rem; /* Equivalent to p-6 */
+    background-color: #2d3748;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
     text-align: center;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
-.mission-icon {
-    width: 4rem; /* Equivalent to w-16 */
-    height: 4rem; /* Equivalent to h-16 */
-    color: #38b2ac; /* A teal color, similar to text-accent-teal - you might need to adjust this color */
-    margin: 0 auto 1rem auto; /* Center and equivalent to mb-4 */
+.mission-item:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18), 0 6px 12px rgba(0,0,0,0.12);
+    z-index: 2;
 }
 
 .mission-item h3 {
-    font-size: 1.25rem; /* Equivalent to text-xl */
-    font-weight: 600; /* Equivalent to font-semibold */
+    font-size: 1.5rem;
+    font-weight: 600;
     color: white;
-    margin-bottom: 0.5rem; /* Equivalent to mb-2 */
-    text-decoration: none; /* Remove underline */
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 133, 123, 0.8);
+    padding-bottom: 0.5rem;
+    text-decoration: none;
 }
 
 .mission-item p {
-    color: #cbd5e0; /* A light grey, similar to text-gray-400 */
+    color: #a0aec0;
 }
 
 /* Optional: Media query for larger screens to ensure 3 columns */
@@ -388,13 +407,13 @@ footer {
 
 @media (min-width: 768px) { /* md: */
     .focus-areas-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)); /* md:grid-cols-2 */
+        grid-template-columns: repeat(1, minmax(0, 1fr)); /* Change to 1 column on medium screens */
     }
 }
 
 @media (min-width: 1024px) { /* lg: */
     .focus-areas-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr)); /* lg:grid-cols-3 */
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Change to 2 columns on large screens */
     }
 }
 
@@ -429,6 +448,8 @@ footer {
     color: white; /* text-white */
     margin-bottom: 0.75rem; /* mb-3 (assuming 1 unit = 0.25rem, 3 * 0.25 = 0.75) */
     text-decoration: none; /* Remove underline */
+    border-bottom: 2px solid rgba(0, 133, 123, 0.8); /* Underline like other sections */
+    padding-bottom: 0.5rem;
 }
 
 .focus-area-card p {
@@ -446,78 +467,55 @@ footer {
     text-decoration: underline; /* hover:underline */
 }
 
-/* Styles for the new Hero section */
+/* --- Updated Hero Section --- */
 .hero-section {
-    background-color: rgb(8, 61, 74); /* Using the same dark grey as the mission section background for consistency */
-    color: white; /* text-white */
-    padding-top: 5rem; /* py-20 (20 * 0.25 = 5) */
-    padding-bottom: 5rem; /* py-20 */
-    display: flex; /* To center content vertically */
-    align-items: center; /* To center content vertically */
-}
-
-@media (min-width: 768px) { /* md: */
-    .hero-section {
-        padding-top: 8rem; /* md:py-32 (32 * 0.25 = 8) */
-        padding-bottom: 8rem; /* md:py-32 */
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem;
+    background-color: rgb(8, 61, 74); /* Retain existing color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
 }
 
 .hero-container {
-    max-width: 1200px; /* container */
-    margin: 0 auto; /* mx-auto */
-    padding: 0 1.5rem; /* px-6 */
-    text-align: center; /* text-center */
+    max-width: 1200px;
+    text-align: center;
 }
 
 .hero-container h1 {
-    font-size: 2.25rem; /* text-4xl */
-    font-weight: bold; /* font-bold */
-    margin-bottom: 1.5rem; /* mb-6 (6 * 0.25 = 1.5) */
-    color: white; /* text-white - redundant but clear */
-    text-decoration: none; /* Remove underline from existing h2 style */
-}
-
-@media (min-width: 768px) { /* md: */
-    .hero-container h1 {
-        font-size: 3.75rem; /* md:text-6xl */
-    }
+    font-size: 2.25rem; /* Match other section titles */
+    font-weight: bold; /* Consistent with other sections */
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 133, 123, 0.8); /* Add underline similar to other sections */
+    padding-bottom: 0.5rem;
 }
 
 .hero-container p {
-    font-size: 1.125rem; /* text-lg */
-    margin-bottom: 2.5rem; /* mb-10 (10 * 0.25 = 2.5) */
-    max-width: 48rem; /* max-w-3xl */
-    margin-left: auto; /* mx-auto */
-    margin-right: auto; /* mx-auto */
-    color: #a0aec0; /* text-gray-400 */
-}
-
-@media (min-width: 768px) { /* md: */
-    .hero-container p {
-        font-size: 1.25rem; /* md:text-xl */
-    }
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #a0aec0; /* Retain existing color */
 }
 
 .hero-button {
-    background-color: #00857b; /* bg-accent-teal */
-    color: white; /* text-white */
-    font-weight: 600; /* font-semibold */
-    padding: 0.75rem 2rem; /* px-8 py-3 (3*0.25=0.75, 8*0.25=2) */
-    border-radius: 0.5rem; /* rounded-lg (assuming 8px) */
-    font-size: 1.125rem; /* text-lg */
-    text-decoration: none; /* Remove underline */
-    transition-property: background-color, color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; /* transition */
-    transition-duration: 300ms; /* duration-300 */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-    display: inline-block; /* Ensure padding and margin work correctly */
+    background-color: #00857b; /* Original color */
+    color: white; /* Original text color */
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none; /* No underline by default */
 }
 
 .hero-button:hover {
-    background-color: #319795; /* hover:bg-accent-teal-dark - a slightly darker teal */
-    text-decoration: underline;
-    text-decoration-color: #fff !important; /* Keep underline white for hero button */
+    background-color: #319795; /* Original hover color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: underline; /* Underline appears on hover */
 }
+/* --- End Updated Hero Section --- */
 
 .nav-donate-button {
     background-color: rgb(0, 133, 123); /* bg-accent-teal */
@@ -700,3 +698,12 @@ a:hover {
         padding-right: 0.5rem;
     }
 }
+
+/* --- Reduce Mission Section Icon Size to Match Focus Area --- */
+.mission-icon {
+    width: 3rem; /* Match .focus-area-icon size */
+    height: 3rem;
+    margin: 0 auto 1rem auto;
+    color: #38b2ac;
+}
+/* --- End Reduce Mission Section Icon Size --- */
