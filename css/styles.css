@@ -102,18 +102,23 @@ nav ul li a:hover {
 main {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem; /* Reduced gap between direct children of main */
     background-color: #222222;
     color: white;
     padding: 20px;
-    margin-top: 80px;
+    margin-top: 80px; /* Increased top margin to create more space below the header */
 }
 
 section {
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Reduced bottom margin for sections */
+}
+
+/* Remove bottom margin from the last section inside main to prevent extra space before the footer */
+main > section:last-child {
+    margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -485,8 +490,8 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center;
-    margin-bottom: 2rem;
+    justify-content: center; /* Reduced bottom margin for info card sections */
+    margin-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
