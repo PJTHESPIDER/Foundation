@@ -106,7 +106,7 @@ main {
     background-color: #222222;
     color: white;
     padding: 20px;
-    margin-top: 80px; /* Increased top margin to create more space below the header */
+    /* Removed margin-top from main */
 }
 
 section {
@@ -114,6 +114,11 @@ section {
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 0.5rem; /* Reduced bottom margin for sections */
+}
+
+/* Add top margin to the first section inside main to create space below the header */
+main > section:first-child {
+    margin-top: 100px;
 }
 
 /* Remove bottom margin from the last section inside main to prevent extra space before the footer */
@@ -550,6 +555,36 @@ footer {
     color: #fff;
     text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
+
+/* Styles for info-card-sections where all cards, including the first, should be standard */
+.info-card-section.all-standard-cards .info-card:first-child {
+    background: #2d3748; /* Override gradient to standard card background */
+    border: none; /* Remove special border from the default first-child */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15); /* Reset to standard card shadow */
+    transform: none; /* Reset special transform from default first-child */
+    z-index: auto; /* Reset z-index */
+    position: static; /* Reset to standard card position (default is static) */
+    max-width: 400px; /* Reset to standard card max-width */
+    min-width: 260px; /* Reset to standard card min-width */
+    width: auto; /* Allow flex to determine width, remove fixed 100% */
+    flex: 1 1 300px; /* Reset to standard card flex behavior */
+    margin: 0 auto; /* Reset to standard card margin */
+    box-sizing: content-box; /* Reset to standard card box-sizing (CSS default) */
+    text-align: left; /* Reset to standard card text-align */
+    /* Padding is inherited from .info-card and should be correct */
+}
+
+.info-card-section.all-standard-cards .info-card:first-child h2 {
+    color: #38b2ac; /* Reset to standard card h2 color */
+    text-shadow: none; /* Remove special text-shadow from default first-child h2 */
+}
+
+
+.dark-bg-section {
+    background-color: #2d3748;
+    color: #ffffff; /* Added white text for better contrast */
+}
+
 
 /* --- Media Queries --- */
 /* Grouped and ordered by breakpoint for better organization */
