@@ -75,16 +75,16 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
     text-decoration: underline;
-    text-decoration-color: #00857b; /* Match donate button color */
+    text-decoration-color: #66FCF1; /* Match donate button color */
 }
 
 /* Navigation Donate Button */
 .nav-donate-button {
-    background-color: rgb(0, 133, 123);
-    color: white;
+    background-color: #66FCF1;
+    color: rgb(0, 0, 0);
     font-weight: 600;
     padding: 0.25rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0rem;
     font-size: 1.125rem;
     text-decoration: none; /* Remove underline */
     transition-property: background-color, color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 /* General h2 styling - applied site-wide unless overridden by more specific selectors */
 h2 {
     font-size: 1.75rem;
-    border-bottom: 2px solid rgba(0, 133, 123, 0.8);
+    border-bottom: 2px solid #66FCF1;
     padding-bottom: 0.5rem;
 }
 
@@ -258,7 +258,7 @@ footer {
     font-weight: bold;
     color: white;
     margin-bottom: 1rem;
-    border-bottom: 2px solid rgba(0, 133, 123, 0.8);
+    border-bottom: 2px solid #66FCF1;
     padding-bottom: 0.5rem;
     text-decoration: none;
 }
@@ -294,7 +294,7 @@ footer {
     font-weight: 600;
     color: white;
     margin-bottom: 0.75rem;
-    border-bottom: 2px solid rgba(0, 133, 123, 0.8);
+    border-bottom: 2px solid #66FCF1;
     padding-bottom: 0.5rem;
     text-decoration: none;
 }
@@ -309,7 +309,7 @@ footer {
     width: 3rem; /* Match .focus-area-icon size */
     height: 3rem;
     margin-bottom: 1rem; /* Match focus-area-icon margin (align left by default) */
-    color: #68d391;
+    color: #66FCF1;
 }
 /* --- End Reduce Mission Section Icon Size --- */
 /* Styles for the new Focus Areas section */
@@ -365,7 +365,7 @@ footer {
 }
 
 .focus-area-icon {
-    color: #68d391;
+    color: #66FCF1;
     margin-bottom: 1rem;
 }
 
@@ -381,7 +381,7 @@ footer {
     color: white;
     margin-bottom: 0.75rem;
     text-decoration: none; /* Remove underline */
-    border-bottom: 2px solid rgba(0, 133, 123, 0.8);
+    border-bottom: 2px solid #66FCF1;
     padding-bottom: 0.5rem;
 }
 
@@ -391,7 +391,7 @@ footer {
 }
 
 .focus-area-card a {
-    color: #38b2ac;
+    color: #66FCF1;
     font-weight: 500;
     text-decoration: none; /* Initial state */
 }
@@ -407,7 +407,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 6rem 2rem;
-    background-color: rgb(8, 61, 74); /* Retain existing color */
+    background-color: #1a202c;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
 }
@@ -421,7 +421,7 @@ footer {
     font-size: 2.25rem; /* Match other section titles */
     font-weight: bold; /* Consistent with other sections */
     margin-bottom: 1rem;
-    border-bottom: 2px solid rgba(0, 133, 123, 0.8);
+    border-bottom: 2px solid #66FCF1;
     padding-bottom: 0.5rem;
 }
 
@@ -432,11 +432,11 @@ footer {
 }
 
 .hero-button {
-    background-color: #00857b; /* Original color */
-    color: white; /* Original text color */
+    background-color: #66FCF1; /* Original color */
+    color: rgb(0, 0, 0); /* Original text color */
     font-weight: 600;
     padding: 0.75rem 2rem;
-    border-radius: 0.5rem;
+    border-radius: 0rem;
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -524,7 +524,7 @@ footer {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
-    color: #38b2ac;
+    color: #cbd5e0;
     text-decoration: none;
 }
 
@@ -535,10 +535,8 @@ footer {
 }
 
 .info-card-section .info-card:first-child {
-    background: linear-gradient(135deg, #38b2ac 0%, #2d3748 100%);
     color: #fff;
     border: 2px solid #38b2ac;
-    box-shadow: 0 8px 32px rgba(56,178,172,0.25), 0 4px 16px rgba(0,0,0,0.18);
     transform: scale(1.02);
     z-index: 1;
     position: relative;
@@ -581,7 +579,7 @@ footer {
 
 
 .trstd-org-section {
-    background-color: #cbf3ee;
+    background-color: #2d3748;
     color: #ffffff; /* Added white text for better contrast */
 }
 
