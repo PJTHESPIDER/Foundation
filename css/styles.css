@@ -1,6 +1,6 @@
-/* styles.css */
+/* styles.css - Cleaned Up */
 
-/* --- LayerZero-inspired structural enhancements --- */
+/* --- Base Styles --- */
 body {
     font-family: 'Inter', 'IBM Plex Mono', 'Segoe UI', Arial, sans-serif;
     line-height: 1.8;
@@ -39,6 +39,7 @@ header {
     color: inherit;
 }
 
+/* --- Navigation --- */
 nav ul {
     display: flex;
     gap: 1.5rem;
@@ -48,97 +49,81 @@ nav ul {
     align-items: center;
 }
 
-/* Navigation container for layout adjustments (e.g., alignment) */
 .nav-container {
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
 }
 
-/* Individual nav list item styling */
-nav ul li {
-    /* Spacing is handled by 'gap' in the parent 'nav ul'. */
-}
-
-/* Nav link base styles */
 nav ul li a {
     font-weight: 600;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 0;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s, color 0.3s;
     color: white;
 }
 
-/* Nav link hover styles */
 nav ul li a:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
     text-decoration: underline;
-    text-decoration-color: #66FCF1; /* Match donate button color */
+    text-decoration-color: #66FCF1;
 }
 
-/* Navigation Donate Button */
 .nav-donate-button {
     background-color: #66FCF1;
-    color: rgb(0, 0, 0);
+    color: #000;
     font-weight: 600;
     padding: 0.25rem 1.5rem;
     border-radius: 0;
     font-size: 1.125rem;
-    text-decoration: none; /* Remove underline */
-    transition-property: background-color, color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-duration: 300ms;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    display: inline-block; /* Ensure padding and margin work correctly */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    display: inline-block;
 }
 
 .nav-donate-button:hover {
-    background-color: #319795; /* hover:bg-accent-teal-dark - a slightly darker teal */
+    background-color: #319795;
     text-decoration: underline;
-    text-decoration-color: #fff !important; /* Force underline to stay white */
+    text-decoration-color: #fff !important;
 }
 
+/* --- Main & Section Layout --- */
 main {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Reduced gap between direct children of main */
-    background-color: #222222;
+    gap: 1rem;
+    background-color: #222;
     color: white;
     padding: 20px;
-    /* Removed margin-top from main */
 }
 
 section {
     padding: 2rem;
     border-radius: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.5rem; /* Reduced bottom margin for sections */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 0.5rem;
 }
 
-/* Add top margin to the first section inside main to create space below the header */
-main > section:first-child {
-    margin-top: 100px;
-}
+main > section:first-child { margin-top: 100px; }
+main > section:last-child { margin-bottom: 0; }
 
-/* Remove bottom margin from the last section inside main to prevent extra space before the footer */
-main > section:last-child {
-    margin-bottom: 0;
-}
-
+/* --- Headings --- */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     margin-bottom: 1rem;
     font-family: 'Pixelify Sans', sans-serif;
 }
 
-/* General h2 styling - applied site-wide unless overridden by more specific selectors */
 h2 {
     font-size: 1.75rem;
     border-bottom: 2px solid #66FCF1;
     padding-bottom: 0.5rem;
 }
 
+/* --- Buttons --- */
 button, .btn {
     font-family: 'Inter', 'IBM Plex Mono', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
@@ -146,38 +131,37 @@ button, .btn {
     border: none;
     border-radius: 0;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover, .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Cards */
+/* --- Cards --- */
 .card {
     padding: 1.5rem;
     border-radius: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255,255,255,0.1);
     background: #333;
     color: #fff;
-    padding: 10px 0; /* Consolidated padding */
+    padding: 10px 0;
 }
 
-/* End LayerZero-inspired structural enhancements */
-
+/* --- Dropdown --- */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -186,38 +170,34 @@ footer {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #66FCF1; /* Match donate button background */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 101; /* Ensure dropdown content is above header */
+    background-color: #66FCF1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 101;
     list-style: none;
     min-width: 160px;
     padding: 0;
     margin-top: 0;
-    border-radius: 0; /* Add rounded corners */
-    overflow: hidden; /* Prevent child hover from breaking border radius */
-}
-
-.dropdown-content li {
-    margin: 0;
+    border-radius: 0;
+    overflow: hidden;
 }
 
 .dropdown-content li a {
-    color: rgb(0, 0, 0); /* Match donate button text color */
+    color: #000;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content li a:hover {
-    background-color: #319795; /* Match donate button hover background */
-    border-radius: 0; /* Prevent individual items from breaking the parent border radius */
-    color: #fff; /* Match donate button hover text color */
+    background-color: #319795;
+    color: #fff;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
+/* --- Issues Section --- */
 .issues-section {
     margin-bottom: 20px;
     display: flex;
@@ -225,35 +205,27 @@ footer {
     gap: 20px;
     flex-direction: row-reverse;
 }
-
-.issues-content {
-    flex: 1;
-}
-
+.issues-content { flex: 1; }
 .issues-section img {
     max-width: 50%;
     height: auto;
 }
 
-/* Styles for mission section */
-
+/* --- Mission Section --- */
 .mission-section {
     background-color: #1a202c;
     padding: 4rem 0;
     color: white;
 }
-
 .mission-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
-
 .mission-header {
     text-align: center;
     margin-bottom: 3rem;
 }
-
 .mission-header h2 {
     font-size: 2.25rem;
     font-weight: bold;
@@ -263,33 +235,28 @@ footer {
     padding-bottom: 0.5rem;
     text-decoration: none;
 }
-
 .mission-header p {
     color: #a0aec0;
     max-width: 42rem;
     margin: 0 auto;
     font-size: 1.125rem;
 }
-
 .mission-grid {
     display: grid;
     gap: 2rem;
 }
-
 .mission-item {
     background-color: #2d3748;
     border-radius: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 10px 15px rgba(0,0,0,0.1);
     padding: 2rem;
     transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
 }
-
 .mission-item:hover {
     transform: translateY(-12px) scale(1.03);
     box-shadow: 0 12px 24px rgba(0,0,0,0.18), 0 6px 12px rgba(0,0,0,0.12);
     z-index: 2;
 }
-
 .mission-item h3 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -299,109 +266,92 @@ footer {
     padding-bottom: 0.5rem;
     text-decoration: none;
 }
-
 .mission-item p {
     color: #a0aec0;
     margin-bottom: 1rem;
 }
-
-/* --- Reduce Mission Section Icon Size to Match Focus Area --- */
 .mission-icon {
-    width: 3rem; /* Match .focus-area-icon size */
+    width: 3rem;
     height: 3rem;
-    margin-bottom: 1rem; /* Match focus-area-icon margin (align left by default) */
+    margin-bottom: 1rem;
     color: #66FCF1;
 }
-/* --- End Reduce Mission Section Icon Size --- */
-/* Styles for the new Focus Areas section */
+
+/* --- Focus Areas Section --- */
 #focus-areas {
     background-color: #1a202c;
     padding: 4rem 0;
     color: white;
 }
-
 .focus-areas-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
-
 .focus-areas-header {
     text-align: center;
     margin-bottom: 3rem;
 }
-
 .focus-areas-header h2 {
     font-size: 2.25rem;
     font-weight: bold;
     color: white;
     margin-bottom: 1rem;
-    text-decoration: none; /* Override default h2 underline */
+    text-decoration: none;
 }
-
 .focus-areas-header p {
     color: #a0aec0;
     max-width: 42rem;
     margin: 0 auto;
     font-size: 1.125rem;
 }
-
 .focus-areas-grid {
     display: grid;
     gap: 2rem;
 }
-
 .focus-area-card {
     background-color: #2d3748;
     padding: 2rem;
     border-radius: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 10px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
 }
-
 .focus-area-card:hover {
     transform: translateY(-12px) scale(1.03);
     box-shadow: 0 12px 24px rgba(0,0,0,0.18), 0 6px 12px rgba(0,0,0,0.12);
     z-index: 2;
 }
-
 .focus-area-icon {
     color: #66FCF1;
     margin-bottom: 1rem;
 }
-
 .focus-area-icon svg {
     width: 3rem;
     height: 3rem;
 }
-
-
 .focus-area-card h3 {
     font-size: 1.5rem;
     font-weight: 600;
     color: white;
     margin-bottom: 0.75rem;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
     border-bottom: 2px solid #66FCF1;
     padding-bottom: 0.5rem;
 }
-
 .focus-area-card p {
     color: #a0aec0;
     margin-bottom: 1rem;
 }
-
 .focus-area-card a {
     color: #66FCF1;
     font-weight: 500;
-    text-decoration: none; /* Initial state */
+    text-decoration: none;
 }
-
 .focus-area-card a:hover {
     text-decoration: underline;
 }
 
-/* --- Updated Hero Section --- */
+/* --- Hero Section --- */
 .hero-section {
     display: flex;
     flex-direction: column;
@@ -409,63 +359,58 @@ footer {
     align-items: center;
     padding: 6rem 2rem;
     background-color: #1a202c;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     border-radius: 0;
 }
-
 .hero-container {
     max-width: 1200px;
     text-align: center;
 }
-
 .hero-container h1 {
-    font-size: 2.25rem; /* Match other section titles */
-    font-weight: bold; /* Consistent with other sections */
+    font-size: 2.25rem;
+    font-weight: bold;
     margin-bottom: 1rem;
     border-bottom: 2px solid #66FCF1;
     padding-bottom: 0.5rem;
 }
-
 .hero-container p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    color: #a0aec0; /* Retain existing color */
+    color: #a0aec0;
 }
-
 .hero-button {
-    background-color: #66FCF1; /* Original color */
-    color: rgb(0, 0, 0); /* Original text color */
+    background-color: #66FCF1;
+    color: #000;
     font-weight: 600;
     padding: 0.75rem 2rem;
-    border-radius: 0;
     border: none;
+    border-radius: 0;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none; /* No underline by default */
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
 }
-
 .hero-button:hover {
-    background-color: #319795; /* Original hover color */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    text-decoration: underline; /* Underline appears on hover */
+    background-color: #319795;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-decoration: underline;
+    text-decoration-color: #fff !important;
 }
-/* --- End Updated Hero Section --- */
 
+/* --- Info Hero Section --- */
 .info-hero-section {
     padding-top: 4rem;
     padding-bottom: 6rem;
     background-color: #1a202c;
 }
-
 .info-hero-section .container {
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
     text-align: center;
 }
-
 .info-hero-section h2 {
     font-size: 2rem;
     font-weight: bold;
@@ -475,33 +420,26 @@ footer {
 .info-hero-section p {
     color: #a0aec0;
     max-width: 42rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 2rem auto;
     font-size: 1.125rem;
-    margin-bottom: 2rem;
 }
-
 .info-hero-section h3 {
     font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
     margin-bottom: 1rem;
 }
+.info-hero-section p:last-child { margin-bottom: 0; }
 
-.info-hero-section p:last-child {
-    margin-bottom: 0;
-}
-
+/* --- Info Card Section --- */
 .info-card-section {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center; /* Reduced bottom margin for info card sections */
+    justify-content: center;
     margin-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
 }
-
 .info-card {
     background: #2d3748;
     color: #fff;
@@ -515,12 +453,10 @@ footer {
     text-align: left;
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .info-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 12px 32px rgba(0,0,0,0.22);
 }
-
 .info-card h2 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -528,67 +464,53 @@ footer {
     color: #cbd5e0;
     text-decoration: none;
 }
-
 .info-card p {
     color: #cbd5e0;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
-
 .info-card-section .info-card:first-child {
     color: #fff;
     border: 2px solid #38b2ac;
     transform: scale(1.02);
     z-index: 1;
     position: relative;
-    max-width: none;
-    min-width: 0;
     width: 100%;
     flex: 0 0 100%;
-    margin: 0; /* Ensure no margin */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
+    margin: 0;
+    box-sizing: border-box;
     text-align: center;
 }
-
 .info-card-section .info-card:first-child h2 {
     color: #fff;
     text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
-/* Styles for info-card-sections where all cards, including the first, should be standard */
 .info-card-section.all-standard-cards .info-card:first-child {
-    background: #2d3748; /* Override gradient to standard card background */
-    border: none; /* Remove special border from the default first-child */
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15); /* Reset to standard card shadow */
-    transform: none; /* Reset special transform from default first-child */
-    z-index: auto; /* Reset z-index */
-    position: static; /* Reset to standard card position (default is static) */
-    max-width: 400px; /* Reset to standard card max-width */
-    min-width: 260px; /* Reset to standard card min-width */
-    width: auto; /* Allow flex to determine width, remove fixed 100% */
-    flex: 1 1 300px; /* Reset to standard card flex behavior */
-    margin: 0 auto; /* Reset to standard card margin */
-    box-sizing: content-box; /* Reset to standard card box-sizing (CSS default) */
-    text-align: left; /* Reset to standard card text-align */
-    /* Padding is inherited from .info-card and should be correct */
+    background: #2d3748;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transform: none;
+    z-index: auto;
+    position: static;
+    max-width: 400px;
+    min-width: 260px;
+    width: auto;
+    flex: 1 1 300px;
+    margin: 0 auto;
+    box-sizing: content-box;
+    text-align: left;
 }
-
 .info-card-section.all-standard-cards .info-card:first-child h2 {
-    color: #38b2ac; /* Reset to standard card h2 color */
-    text-shadow: none; /* Remove special text-shadow from default first-child h2 */
+    color: #38b2ac;
+    text-shadow: none;
 }
-
 
 .trstd-org-section {
     background-color: #2d3748;
-    color: #ffffff; /* Added white text for better contrast */
+    color: #fff;
 }
 
-
 /* --- Media Queries --- */
-/* Grouped and ordered by breakpoint for better organization */
-
-/* Max-width queries first */
 @media (max-width: 700px) {
     .info-card-section {
         flex-direction: column;
@@ -603,44 +525,16 @@ footer {
         padding-right: 0.5rem;
     }
 }
-
-/* Min-width queries, ascending */
 @media (min-width: 768px) {
-    /* Mission Section */
-    .mission-section {
-        padding: 6rem 0;
-    }
-    .mission-header {
-        margin-bottom: 4rem;
-    }
-    .mission-header h2 {
-        font-size: 2.5rem;
-    }
-    .mission-grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr)); /* 1 column on medium */
-    }
-
-    /* Focus Areas Section */
-    .focus-areas-header {
-        margin-bottom: 4rem;
-    }
-    .focus-areas-header h2 {
-        font-size: 2.5rem;
-    }
-    .focus-areas-grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr)); /* 1 column on medium */
-    }
-
-    /* Info Hero Section */
-    .info-hero-section h2 {
-        font-size: 2.5rem;
-    }
-    .info-hero-section {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
-
-    /* Info Card Section (merged from previous location) */
+    .mission-section { padding: 6rem 0; }
+    .mission-header { margin-bottom: 4rem; }
+    .mission-header h2 { font-size: 2.5rem; }
+    .mission-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .focus-areas-header { margin-bottom: 4rem; }
+    .focus-areas-header h2 { font-size: 2.5rem; }
+    .focus-areas-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .info-hero-section h2 { font-size: 2.5rem; }
+    .info-hero-section { padding-top: 6rem; padding-bottom: 6rem; }
     .info-card-section .info-card:first-child {
         width: 100%;
         flex: 0 0 100%;
@@ -653,18 +547,10 @@ footer {
         box-sizing: border-box;
     }
 }
-
-@media (min-width: 1024px) { /* lg: */
-    .focus-areas-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .mission-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+@media (min-width: 1024px) {
+    .focus-areas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mission-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-
 @media (min-width: 1200px) {
-    .mission-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .mission-grid { grid-template-columns: repeat(3, 1fr); }
 }
