@@ -618,22 +618,54 @@ footer {
     .focus-areas-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
     .info-hero-section h2 { font-size: 2.5rem; }
     .info-hero-section { padding-top: 6rem; padding-bottom: 6rem; }
+
+    /* Info Card Section - Grid Layout for larger screens */
+    .info-card-section {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns at tablet/desktop */
+        gap: 2rem;
+        padding: 0 1rem;
+    }
     .info-card-section .info-card:first-child {
-        width: 100%;
-        flex: 0 0 100%;
+        grid-column: 1 / -1; /* Make the first card span all columns */
+        /* Remove conflicting flex and width properties */
+        flex: auto;
+        width: auto;
         max-width: none;
+        border: none;
+        transform: none;
+        z-index: auto;
+        position: static;
+        text-align: left;
+        background: #2d3748;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        color: #fff;
+        margin-bottom: 0; /* Remove extra margin if present */
+    }
+    .info-card-section .info-card:first-child h2 {
+        color: #cbd5e0;
+        text-shadow: none;
     }
     .info-card-section .info-card:not(:first-child) {
-        flex: 1 1 calc((100% - 4rem) / 3);
-        max-width: calc((100% - 4rem) / 3);
+        max-width: unset;
+        min-width: 0;
+        width: 100%;
+        flex: unset;
         margin: 0;
         box-sizing: border-box;
     }
 }
+@media (min-width: 1200px) {
+    .info-card-section {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns at large desktop */
+    }
+}
+
 @media (min-width: 1024px) {
     .focus-areas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .mission-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
 @media (min-width: 1200px) {
     .mission-grid { grid-template-columns: repeat(3, 1fr); }
 }
