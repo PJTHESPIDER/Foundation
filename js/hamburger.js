@@ -37,23 +37,33 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    // Add: Enable dropdowns in mobile menu to open on tap/click
+    // Add: Dropdown arrow click for mobile menu
     if (mobileMenu) {
         mobileMenu.querySelectorAll('.dropdown > a').forEach(function(parentLink) {
-            parentLink.addEventListener('click', function(e) {
+            // Create arrow span
+            var arrow = document.createElement('span');
+            arrow.className = 'dropdown-arrow';
+            arrow.setAttribute('tabindex', '0');
+            arrow.setAttribute('aria-label', 'Toggle dropdown');
+            arrow.innerHTML = '&#9660;'; // ▼
+            parentLink.parentNode.insertBefore(arrow, parentLink.nextSibling);
+            arrow.addEventListener('click', function(e) {
                 var parentLi = parentLink.parentElement;
                 if (parentLi.classList.contains('open')) {
                     parentLi.classList.remove('open');
                 } else {
-                    // Close any other open dropdowns
+                    // Close other open dropdowns
                     mobileMenu.querySelectorAll('.dropdown.open').forEach(function(openLi) {
                         openLi.classList.remove('open');
                     });
                     parentLi.classList.add('open');
                 }
-                // Only prevent default if dropdown-content exists
-                if (parentLi.querySelector('.dropdown-content')) {
+                e.stopPropagation();
+            });
+            arrow.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
+                    arrow.click();
                 }
             });
         });
