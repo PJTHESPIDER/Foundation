@@ -3,8 +3,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     var hamburger = document.querySelector('.hamburger-icon');
     var mobileMenu = document.querySelector('.mobile-menu');
+    var body = document.body;
     function toggleMenu() {
         mobileMenu.classList.toggle('open');
+        if (mobileMenu.classList.contains('open')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
     }
     if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', toggleMenu);
@@ -19,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(e) {
         if (mobileMenu && mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && e.target !== hamburger) {
             mobileMenu.classList.remove('open');
+            body.style.overflow = '';
         }
     });
     // Optional: Close menu when a link is clicked
@@ -26,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
                 mobileMenu.classList.remove('open');
+                body.style.overflow = '';
             });
         });
     }
