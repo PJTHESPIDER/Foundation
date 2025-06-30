@@ -589,16 +589,16 @@ footer {
 
     .mobile-menu li .dropdown-content {
         display: none;
-        position: absolute;
-        left: 100%;
+        position: static;
+        left: 0;
         top: 0;
         background: #222;
-        min-width: 180px;
+        min-width: 100%;
         z-index: 120;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        box-shadow: none;
+        padding-left: 1.5rem;
     }
-    .mobile-menu li:hover > .dropdown-content,
-    .mobile-menu li:focus-within > .dropdown-content {
+    .mobile-menu li.dropdown.open > .dropdown-content {
         display: block;
     }
     .mobile-menu li .dropdown-content li a {
@@ -610,6 +610,12 @@ footer {
     .mobile-menu li .dropdown-content li a:hover {
         background: #319795;
         color: #fff;
+    }
+    .mobile-menu li.dropdown > a::after {
+        content: '\25BC';
+        float: right;
+        margin-left: 0.5em;
+        font-size: 0.8em;
     }
 }
 
