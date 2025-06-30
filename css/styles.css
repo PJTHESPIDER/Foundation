@@ -591,7 +591,7 @@ footer {
         display: none;
         position: static;
         left: 0;
-        top: 0;
+        top: auto;
         background: #222;
         min-width: 100%;
         z-index: 120;
@@ -610,12 +610,6 @@ footer {
     .mobile-menu li .dropdown-content li a:hover {
         background: #319795;
         color: #fff;
-    }
-    .mobile-menu li.dropdown > a::after {
-        content: '\25BC';
-        float: right;
-        margin-left: 0.5em;
-        font-size: 0.8em;
     }
 }
 
