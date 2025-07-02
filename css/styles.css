@@ -439,6 +439,7 @@ footer {
     justify-content: center;
     margin-bottom: 1rem;
     padding: 0 1rem;
+    background-color: #1a202c; /* Match other sections */
 }
 .info-card {
     background: #2d3748;
@@ -637,7 +638,7 @@ footer {
 }
 
 /* --- Media Queries --- */
-@media (max-width: 700px) {
+@media (max-width: 1024px) {
     .info-card-section {
         flex-direction: column;
         gap: 1.5rem;
@@ -647,8 +648,26 @@ footer {
         min-width: 0;
     }
     .info-card-section .info-card:first-child {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        /* Restore border for first-child on mobile */
+        border: 2px solid #38b2ac;
+        color: #fff;
+        transform: none;
+        z-index: auto;
+        position: static;
+        width: auto;
+        flex: 1 1 300px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        text-align: left;
+        background: #2d3748;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        padding: 2rem 2rem 1.5rem 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .info-card-section .info-card:first-child h2 {
+        color: #cbd5e0;
+        text-shadow: none;
     }
 }
 @media (min-width: 768px) {
