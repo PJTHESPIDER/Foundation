@@ -748,15 +748,12 @@ footer {
         grid-template-columns: repeat(3, 1fr); /* 3 columns at large desktop */
         padding: 2rem 2rem; /* Match left/right padding to gap on large desktop */
     }
+    .mission-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (min-width: 1024px) {
     .focus-areas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .mission-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (min-width: 1200px) {
-    .mission-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .trstd-org-section {
