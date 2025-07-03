@@ -456,25 +456,6 @@ footer {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.info-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.22);
-}
-
-.info-card h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: #cbd5e0;
-    text-decoration: none;
-}
-
-.info-card p {
-    color: #cbd5e0;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
 /* Special styling for first card */
 .info-card-section .info-card:first-child {
     color: #fff;
@@ -516,9 +497,43 @@ footer {
     text-shadow: none;
 }
 
-.trstd-org-section {
-    background-color: #2d3748;
-    color: #fff;
+@media (max-width: 1024px) {
+    .info-card-section .info-card:first-child {
+        /* Only override what's needed for mobile */
+        border: 2px solid #38b2ac;
+        color: #fff;
+        text-align: left;
+        background: #2d3748;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        padding: 2rem 2rem 1.5rem 2rem;
+        margin: 0 auto;
+    }
+    .info-card-section .info-card:first-child h2 {
+        color: #cbd5e0;
+        text-shadow: none;
+    }
+}
+@media (min-width: 768px) {
+    .info-card-section .info-card:first-child {
+        grid-column: 1 / -1;
+        /* Only override what's needed for grid layout */
+        flex: unset;
+        width: auto;
+        max-width: none;
+        border: none;
+        transform: none;
+        z-index: auto;
+        position: static;
+        text-align: left;
+        background: #2d3748;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        color: #fff;
+        margin-bottom: 0;
+    }
+    .info-card-section .info-card:first-child h2 {
+        color: #cbd5e0;
+        text-shadow: none;
+    }
 }
 
 /* --- Hamburger Menu --- */
@@ -742,4 +757,9 @@ footer {
 
 @media (min-width: 1200px) {
     .mission-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.trstd-org-section {
+    background-color: #2d3748;
+    color: #fff;
 }
