@@ -437,9 +437,9 @@ footer {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    margin-bottom: 1rem;
-    padding: 0 1rem;
-    background-color: #1a202c; /* Match other sections */
+    padding: 2rem 2rem; /* Make left/right padding equal to gap between cards */
+    background-color: #1a202c;
+    position: relative;
 }
 .info-card {
     background: #2d3748;
@@ -450,14 +450,17 @@ footer {
     max-width: 400px;
     min-width: 260px;
     flex: 1 1 300px;
-    margin: 0 auto;
+    /* Remove vertical margin, rely on section padding and gap */
+    margin: 0;
     text-align: left;
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .info-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 12px 32px rgba(0,0,0,0.22);
 }
+
 .info-card h2 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -465,11 +468,14 @@ footer {
     color: #cbd5e0;
     text-decoration: none;
 }
+
 .info-card p {
     color: #cbd5e0;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
+
+/* Special styling for first card */
 .info-card-section .info-card:first-child {
     color: #fff;
     border: 2px solid #38b2ac;
@@ -482,10 +488,13 @@ footer {
     box-sizing: border-box;
     text-align: center;
 }
+
 .info-card-section .info-card:first-child h2 {
     color: #fff;
     text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
+
+/* Remove special styling if all-standard-cards class is present */
 .info-card-section.all-standard-cards .info-card:first-child {
     background: #2d3748;
     border: none;
@@ -501,6 +510,7 @@ footer {
     box-sizing: content-box;
     text-align: left;
 }
+
 .info-card-section.all-standard-cards .info-card:first-child h2 {
     color: #38b2ac;
     text-shadow: none;
@@ -642,6 +652,7 @@ footer {
     .info-card-section {
         flex-direction: column;
         gap: 1.5rem;
+        padding: 2rem 1.5rem; /* Match left/right padding to gap on mobile */
     }
     .info-card {
         max-width: 100%;
@@ -686,7 +697,7 @@ footer {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns at tablet/desktop */
         gap: 2rem;
-        padding: 0 1rem;
+        padding: 2rem 2rem; /* Match left/right padding to gap on tablet/desktop */
     }
     .info-card-section .info-card:first-child {
         grid-column: 1 / -1; /* Make the first card span all columns */
@@ -720,6 +731,7 @@ footer {
 @media (min-width: 1200px) {
     .info-card-section {
         grid-template-columns: repeat(3, 1fr); /* 3 columns at large desktop */
+        padding: 2rem 2rem; /* Match left/right padding to gap on large desktop */
     }
 }
 
