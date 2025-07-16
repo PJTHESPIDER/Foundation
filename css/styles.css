@@ -14,18 +14,15 @@
 
 /* --- Base Styles --- */
 body {
-    /* Typography */
     font-family: 'Inter', 'IBM Plex Mono', 'Segoe UI', Arial, sans-serif;
     line-height: 1.8;
     letter-spacing: 0.02em;
     color: #333;
-    /* Layout & Box Model */
     margin: 0;
     padding: 0;
 }
 
 header {
-    /* Layout & Box Model */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +33,6 @@ header {
     box-sizing: border-box;
     padding: 0.625rem;
     z-index: 1000;
-    /* Visual */
     background-color: var(--color-header);
     color: var(--color-text-light);
     border-bottom: 1px solid var(--color-border);
@@ -44,11 +40,9 @@ header {
 }
 
 .logo {
-    /* Typography */
     font-size: 2.5em;
     font-weight: bold;
     letter-spacing: 0.05em;
-    /* Layout */
     margin-right: auto;
 }
 
@@ -59,7 +53,6 @@ header {
 
 /* --- Navigation --- */
 nav ul {
-    /* Layout & Box Model */
     display: flex;
     gap: 1.5rem;
     align-items: center;
@@ -75,15 +68,11 @@ nav ul {
 }
 
 nav ul li a {
-    /* Typography */
     font-weight: 600;
     color: var(--color-text-light);
-    /* Layout & Box Model */
     padding: 0.5rem 1rem;
     border-radius: 0;
-    /* Visual */
     text-decoration: none;
-    /* Animation */
     transition: background 0.3s, color 0.3s;
 }
 
@@ -96,21 +85,17 @@ nav ul li a:hover {
 
 /* --- Shared Button Styles --- */
 .nav-donate-button, .hero-button, button {
-    /* Layout & Box Model */
     display: inline-block;
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 0;
     box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0,0,0,0.1), 0 0.25rem 0.375rem -0.125rem rgba(0,0,0,0.05);
     cursor: pointer;
-    /* Typography */
     font-family: 'Inter', 'IBM Plex Mono', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
     color: #000;
-    /* Visual */
     background-color: var(--color-primary);
     text-decoration: none;
-    /* Animation */
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 
@@ -137,31 +122,31 @@ nav ul li a:hover {
 
 /* --- Main & Section Layout --- */
 main {
-    /* Layout & Box Model */
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 1.25rem;
-    /* Visual */
     background-color: #222;
     color: var(--color-text-light);
 }
 
 section {
-    /* Layout & Box Model */
     padding: 2rem;
     margin-bottom: 0.5rem;
     border-radius: 0;
-    /* Visual */
     box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
 }
 
-main > section:first-child { margin-top: 6.25rem; }
-main > section:last-child { margin-bottom: 0; }
+main > section:first-child {
+    margin-top: 6.25rem;
+}
+
+main > section:last-child {
+    margin-bottom: 0;
+}
 
 /* --- Headings --- */
 h1, h2, h3, h4, h5, h6 {
-    /* Typography */
     font-family: 'Pixelify Sans', sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -175,10 +160,8 @@ h2 {
 
 /* --- Footer --- */
 footer {
-    /* Layout & Box Model */
     text-align: center;
     padding: 0.625rem 0;
-    /* Visual */
     background: #333;
     color: var(--color-text-light);
     border-top: 1px solid var(--color-border);
@@ -186,13 +169,11 @@ footer {
 
 /* --- Dropdown --- */
 .dropdown {
-    /* Layout & Box Model */
     position: relative;
     display: inline-block;
 }
 
 .dropdown-content {
-    /* Layout & Box Model */
     display: none;
     position: absolute;
     min-width: 10rem;
@@ -200,7 +181,6 @@ footer {
     margin-top: 0;
     border-radius: 0;
     overflow: hidden;
-    /* Visual */
     background-color: var(--color-primary);
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     z-index: 101;
@@ -208,12 +188,9 @@ footer {
 }
 
 .dropdown-content li a {
-    /* Typography */
     color: #000;
-    /* Layout & Box Model */
     padding: 0.75rem 1rem;
     display: block;
-    /* Visual */
     text-decoration: none;
 }
 
@@ -228,7 +205,6 @@ footer {
 
 /* --- Issues Section --- */
 .issues-section {
-    /* Layout & Box Model */
     margin-bottom: 1.25rem;
     display: flex;
     align-items: center;
@@ -245,9 +221,7 @@ footer {
 
 /* --- Mission Section --- */
 .mission-section {
-    /* Layout & Box Model */
     padding: 4rem 0;
-    /* Visual */
     background-color: var(--color-bg-dark);
     color: var(--color-text-light);
 }
@@ -280,13 +254,10 @@ footer {
     gap: 2rem;
 }
 .mission-item {
-    /* Layout & Box Model */
     padding: 2rem;
     border-radius: 0;
-    /* Visual */
     background-color: var(--color-bg-card);
     box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.1), 0 0.625rem 0.9375rem rgba(0,0,0,0.1);
-    /* Animation */
     transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 .mission-item:hover {
@@ -316,9 +287,7 @@ footer {
 
 /* --- Focus Areas Section --- */
 #focus-areas {
-    /* Layout & Box Model */
     padding: 4rem 0;
-    /* Visual */
     background-color: var(--color-bg-dark);
     color: var(--color-text-light);
 }
@@ -349,13 +318,10 @@ footer {
     gap: 2rem;
 }
 .focus-area-card {
-    /* Layout & Box Model */
     padding: 2rem;
     border-radius: 0;
-    /* Visual */
     background-color: var(--color-bg-card);
     box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.1), 0 0.625rem 0.9375rem rgba(0,0,0,0.1);
-    /* Animation */
     transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 .focus-area-card:hover {
@@ -451,7 +417,9 @@ footer {
     color: var(--color-text-light);
     margin-bottom: 1rem;
 }
-.info-hero-section p:last-child { margin-bottom: 0; }
+.info-hero-section p:last-child {
+    margin-bottom: 0;
+}
 
 /* --- Info Card Section --- */
 .info-card-section {
@@ -475,7 +443,6 @@ footer {
     text-align: left;
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .info-card-section .info-card:first-child {
     color: var(--color-text-light);
     border: 2px solid var(--color-accent);
@@ -485,12 +452,10 @@ footer {
     box-sizing: border-box;
     text-align: center;
 }
-
 .info-card-section .info-card:first-child h2 {
     color: var(--color-text-light);
     text-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.18);
 }
-
 .info-card-section.all-standard-cards .info-card:first-child {
     border: none;
     transform: none;
@@ -504,7 +469,6 @@ footer {
     box-sizing: content-box;
     text-align: left;
 }
-
 .info-card-section.all-standard-cards .info-card:first-child h2 {
     color: var(--color-accent);
     text-shadow: none;
@@ -515,13 +479,10 @@ footer {
         display: none;
     }
     .hamburger-icon {
-        /* Layout & Box Model */
         display: block;
         padding: 0.5em;
         margin: 0;
-        /* Typography */
         font-size: 2rem;
-        /* Visual */
         color: var(--color-text-light);
         background: none;
         border: none;
@@ -530,7 +491,6 @@ footer {
         cursor: pointer;
     }
     .mobile-menu {
-        /* Layout & Box Model */
         display: none;
         position: fixed;
         top: 0;
@@ -542,7 +502,6 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        /* Visual */
         background-color: var(--color-bg-dark);
         color: var(--color-text-light);
         z-index: 105;
@@ -551,7 +510,6 @@ footer {
         display: flex;
     }
     .mobile-menu ul {
-        /* Layout & Box Model */
         list-style: none;
         padding: 0;
         margin: 0;
@@ -564,15 +522,11 @@ footer {
         margin-bottom: 1.5rem;
     }
     .mobile-menu li a {
-        /* Typography */
         font-size: 1.5rem;
         color: var(--color-text-light);
-        /* Layout & Box Model */
         padding: 0.75rem 1.5rem;
         display: block;
-        /* Visual */
         text-decoration: none;
-        /* Animation */
         transition: background 0.3s, color 0.3s;
     }
     .mobile-menu li a:hover {
@@ -587,7 +541,6 @@ footer {
         padding-right: 2.2em;
     }
     .mobile-menu .dropdown-arrow {
-        /* Layout & Box Model */
         position: absolute;
         right: 1em;
         top: 50%;
@@ -598,9 +551,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        /* Typography */
         font-size: 1em;
-        /* Visual */
         color: var(--color-text-light);
         background: none;
         border: none;
@@ -705,7 +656,6 @@ footer {
 
 /* --- Utility Classes --- */
 .trstd-org-section {
-    /* Visual */
     background-color: var(--color-bg-card);
     color: var(--color-text-light);
 }
