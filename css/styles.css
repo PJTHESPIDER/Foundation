@@ -666,3 +666,271 @@ footer {
     background-color: var(--color-bg-card);
     color: var(--color-text-light);
 }
+/* LayerZero-inspired Minimalist Design */
+:root {
+    --bg-color: #050505;
+    --text-color: #ffffff;
+    --text-muted: #a0a0a0;
+    --border-color: #222;
+    --accent-color: #66FCF1;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    margin: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Wrapper */
+.lz-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    background: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography Overrides */
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; margin: 0; }
+p { color: var(--text-muted); line-height: 1.6; }
+a { text-decoration: none; color: inherit; transition: color 0.2s; }
+
+/* Header */
+header {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    height: 72px;
+    padding: 0 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: none;
+    width: auto; left: auto; /* Reset fixed positioning */
+}
+
+.logo { font-family: var(--font-mono); font-size: 1.1rem; text-transform: uppercase; letter-spacing: -0.05em; display: flex; align-items: center; gap: 0.5rem; }
+.logo-icon { width: 24px; height: 24px; color: var(--text-color); }
+
+.nav-container {
+    height: 100%; /* Ensure container fills header height */
+}
+.nav-container > ul { 
+    display: flex;
+    list-style: none;
+    gap: 2rem; 
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+.nav-container a {
+    font-size: 0.85rem; font-weight: 500;
+    color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;
+    border-radius: 0; padding: 0.5rem 0;
+}
+.nav-container a:hover { background: transparent; color: var(--text-color); text-decoration: none; }
+
+.nav-donate-button {
+    border: 1px solid var(--text-color);
+    padding: 0.4rem 1.2rem;
+    font-family: var(--font-mono);
+    color: var(--text-color) !important;
+    background: transparent;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+.nav-donate-button:hover {
+    background: var(--text-color) !important;
+    color: var(--bg-color) !important;
+    transform: none !important;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2) !important;
+}
+
+/* Main Content */
+main {
+    display: block; padding: 0; gap: 0; margin: 0;
+    background: transparent;
+    color: var(--text-color);
+}
+main > section:first-child { margin-top: 0; }
+
+/* Hero Section */
+.hero-section {
+    padding: 10rem 2rem 8rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    background: radial-gradient(circle at center, rgba(102, 252, 241, 0.08) 0%, transparent 60%);
+    display: flex; flex-direction: column; align-items: center;
+    box-shadow: none; margin: 0;
+}
+.hero-container h1 {
+    font-size: 4rem; margin-bottom: 1.5rem;
+    background: linear-gradient(to bottom right, #fff, #999);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-container p { font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem; font-family: var(--font-mono); font-size: 1rem; color: var(--text-muted); }
+.hero-button {
+    background: var(--text-color); color: var(--bg-color);
+    font-family: var(--font-mono); text-transform: uppercase; font-weight: 600;
+    padding: 1rem 2.5rem; border: 1px solid var(--text-color);
+    box-shadow: none;
+    cursor: pointer;
+}
+.hero-button:hover {
+    background: transparent; color: var(--text-color);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.3);
+    text-decoration: none; transform: none;
+}
+
+/* Sections */
+section { margin: 0; padding: 0; box-shadow: none; background: transparent; }
+.mission-header, .focus-areas-header {
+    padding: 6rem 2rem; text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+.mission-header h2, .focus-areas-header h2 { font-size: 2.5rem; border: none; margin-bottom: 1rem; }
+.mission-header p, .focus-areas-header p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+
+/* Grids */
+.mission-grid, .focus-areas-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    background: var(--border-color); gap: 1px;
+    border-bottom: 1px solid var(--border-color);
+}
+.mission-item, .focus-area-card {
+    background: var(--bg-color); padding: 3rem 2rem;
+    box-shadow: none; border-radius: 0;
+    display: flex; flex-direction: column;
+    transition: background 0.3s;
+}
+.mission-item:hover, .focus-area-card:hover { background: #0a0a0a; transform: none; box-shadow: none; z-index: 1; }
+
+.mission-icon, .focus-area-icon { color: var(--text-color); width: 40px; height: 40px; margin-bottom: 1.5rem; }
+.mission-item h3, .focus-area-card h3 {
+    font-family: var(--font-mono); font-size: 0.9rem;
+    text-transform: uppercase; color: var(--text-color);
+    margin-bottom: 1rem; border: none;
+}
+
+.focus-area-card a {
+    margin-top: auto; padding-top: 1.5rem;
+    font-family: var(--font-mono); font-size: 0.8rem;
+    text-transform: uppercase; color: var(--text-muted);
+}
+.focus-area-card a:hover { color: var(--accent-color); text-decoration: none; }
+
+/* Dropdowns */
+.dropdown { position: relative; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    min-width: auto;
+    width: max-content;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+}
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+.dropdown-content li:last-child a { border-bottom: none; }
+.dropdown-content li a:hover {
+    background: #111;
+    color: var(--text-color);
+}
+
+/* Footer */
+footer { background: var(--bg-color); border: none; padding: 3rem; font-family: var(--font-mono); font-size: 0.8rem; color: #333; }
+
+/* Mobile Menu & Responsive */
+.hamburger-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    z-index: 999;
+    height: calc(100vh - 72px);
+    overflow-y: auto;
+}
+
+.mobile-menu.open {
+    display: block;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu li:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 1rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.mobile-menu .dropdown-content {
+    position: static;
+    border: none;
+    background: #0a0a0a;
+    display: none;
+}
+.mobile-menu .dropdown.open .dropdown-content {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .nav-container { display: none; }
+    .hamburger-icon { display: block; }
+    .mission-grid, .focus-areas-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .lz-wrapper { border: none; }
+    .mission-grid, .focus-areas-grid { grid-template-columns: 1fr; }
+    .hero-container h1 { font-size: 2.5rem; }
+    header { padding: 0 1rem; }
+}
