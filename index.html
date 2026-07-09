@@ -3,180 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Foundation | Building a Sustainable Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lz-black: #0B0C10;
+            --lz-dark-gray: #1F2833;
+            --lz-light-gray: #C5C6C7;
+            --lz-accent: #66FCF1;
+            --lz-accent-dim: #45A29E;
+        }
+        body {
+            background-color: var(--lz-black);
+            color: var(--lz-light-gray);
+            font-family: 'IBM Plex Mono', monospace;
+            -webkit-font-smoothing: antialiased;
+        }
+        .lz-border {
+            border: 1px solid rgba(102, 252, 241, 0.1);
+        }
+        .lz-border-accent {
+            border: 1px solid var(--lz-accent);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, #1F2833 0%, #0B0C10 100%);
+        }
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            background: rgba(102, 252, 241, 0.03);
+            border-color: var(--lz-accent);
+            transform: translateY(-2px);
+        }
+        .corner-accent {
+            position: relative;
+        }
+        .corner-accent::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-top: 1px solid var(--lz-accent);
+            border-right: 1px solid var(--lz-accent);
+        }
+        .italic-serif {
+            font-style: italic;
+            letter-spacing: -0.02em;
+            color: #FFFFFF;
+        }
+        .text-accent {
+            color: var(--lz-accent);
+        }
+        .bg-accent {
+            background-color: var(--lz-accent);
+        }
+        .section-index {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            color: var(--lz-accent);
+            opacity: 0.6;
+        }
+        .card-index {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 9px;
+            color: var(--lz-accent);
+            opacity: 0.6;
+        }
+    </style>
 </head>
-<body>
-    <div class="lz-wrapper">
-    <header>
-        <div class="logo">
-            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <!-- Network Nodes Icon -->
-                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" fill="none" />
-                <circle cx="4.5" cy="4.5" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
-                <circle cx="19.5" cy="4.5" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
-                <circle cx="4.5" cy="19.5" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
-                <circle cx="19.5" cy="19.5" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
-                <line x1="12" y1="9" x2="12" y2="4.5" stroke="currentColor" stroke-width="1.5" />
-                <line x1="12" y1="15" x2="12" y2="19.5" stroke="currentColor" stroke-width="1.5" />
-                <line x1="9" y1="12" x2="4.5" y2="12" stroke="currentColor" stroke-width="1.5" />
-                <line x1="15" y1="12" x2="19.5" y2="12" stroke="currentColor" stroke-width="1.5" />
+<body class="selection:bg-[#66FCF1] selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="py-6 px-8 flex justify-between items-center sticky top-0 bg-[#0B0C10]/90 backdrop-blur-md z-50 border-b border-[#66FCF1]/10">
+        <div class="flex items-center gap-3">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#66FCF1" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3" />
+                <circle cx="4.5" cy="4.5" r="2" />
+                <circle cx="19.5" cy="4.5" r="2" />
+                <circle cx="4.5" cy="19.5" r="2" />
+                <circle cx="19.5" cy="19.5" r="2" />
+                <line x1="12" y1="9" x2="12" y2="4.5" />
+                <line x1="12" y1="15" x2="12" y2="19.5" />
+                <line x1="9" y1="12" x2="4.5" y2="12" />
+                <line x1="15" y1="12" x2="19.5" y2="12" />
             </svg>
-            <a href="index.html">Foundation</a>
+            <a href="index.html" class="text-xl font-bold tracking-tighter uppercase text-white">Foundation</a>
         </div>
-        <nav class="nav-container">
-            <ul>
-                <li class="dropdown">
-                    <a href="issues.html">Issues</a>
-                    <ul class="dropdown-content">
-                        <li><a href="issues/climate.html">Climate</a></li>
-                        <li><a href="issues/economic.html">Economic</a></li>
-                        <li><a href="issues/social.html">Social</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" >
-                    <a href="take-action.html">Take Action</a>
-                    <ul class="dropdown-content">
-                        <li><a href="take-action/programs.html">Our Programs</a></li>
-                        <li><a href="take-action/trusted-organizations.html">Trusted Organizations</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="take-action/programs.html" class="nav-donate-button">Donate</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger-icon" tabindex="0" aria-label="Open navigation menu">&#9776;</div>
-        <nav class="mobile-menu" aria-label="Mobile Navigation">
-            <ul>
-                <li class="dropdown">
-                    <a href="issues.html">Issues</a>
-                    <ul class="dropdown-content">
-                        <li><a href="issues/climate.html">Climate</a></li>
-                        <li><a href="issues/economic.html">Economic</a></li>
-                        <li><a href="issues/social.html">Social</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="take-action.html">Take Action</a>
-                    <ul class="dropdown-content">
-                        <li><a href="take-action/programs.html">Our Programs</a></li>
-                        <li><a href="take-action/trusted-organizations.html">Trusted Organizations</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="take-action/programs.html" class="nav-donate-button">Donate</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-    <section class="hero-section">
-        <div class="hero-container">
-            <h1>Building a Sustainable & Equitable Future</h1>
-            <p>
-                Foundatoin is dedicated to tackling pressing climate, social, and economic challenges to create a just and thriving world for all.
-            </p>
-            <a href="#focus-areas" class="hero-button">
-                Discover Our Work
-            </a>
-        </div>
-    </section>
         
-    <section id="mission" class="mission-section">
-        <div class="mission-container">
-            <div class="mission-header">
-                <h2>Our Mission & Vision</h2>
-                <p>
-                    We believe in a world where environmental sustainability, social equity, and economic opportunity are intertwined. Our mission is to empower communities, advocate for systemic change, and implement solutions that address the root causes of global inequalities and environmental degradation.
-                </p>
+        <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.3em]">
+            <a href="issues.html" class="hover:text-[#66FCF1] transition-colors">Issues</a>
+            <a href="take-action.html" class="hover:text-[#66FCF1] transition-colors">Take Action</a>
+            <a href="about.html" class="hover:text-[#66FCF1] transition-colors">About</a>
+        </div>
+
+        <a href="take-action/programs.html" class="lz-border-accent px-6 py-2 bg-[#66FCF1] text-black font-bold text-[10px] uppercase tracking-widest hover:bg-transparent hover:text-[#66FCF1] transition-all">
+            Donate
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-[90vh] flex flex-col justify-center items-center px-6 text-center border-b border-[#66FCF1]/5 relative">
+        <div class="section-index">(00)</div>
+        <div class="absolute top-32 left-8">
+            <span class="text-[10px] tracking-[0.4em] uppercase text-[#66FCF1]">// Systemic Change initiative</span>
+        </div>
+        <div class="max-w-5xl w-full mt-20">
+            <h1 class="text-5xl md:text-8xl font-bold mb-10 italic-serif tracking-tighter leading-[0.9]">
+                Building a Sustainable & <br/><span class="text-[#66FCF1]">Equitable Future</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-base md:text-lg opacity-80 mb-14 font-light leading-relaxed">
+                Foundation is dedicated to tackling pressing climate, social, and economic challenges to create a just and thriving world for all.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="#focus-areas" class="bg-[#66FCF1] text-black px-12 py-5 font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-[#45A29E] transition-all">
+                    Explore Initiatives
+                </a>
+                <a href="take-action.html" class="lz-border-accent px-12 py-5 text-[#66FCF1] font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-[#66FCF1] hover:text-black transition-all">
+                    Join Movement
+                </a>
             </div>
-            <div class="mission-grid">
-                <div class="mission-item">
-                    <svg class="mission-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <!-- Research Icon: Magnifying Glass over Document -->
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75A2.25 2.25 0 0 0 14.25 4.5h-7.5A2.25 2.25 0 0 0 4.5 6.75v10.5A2.25 2.25 0 0 0 6.75 19.5h4.75" />
-                        <circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="1.5" fill="none" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-1.5-1.5" />
-                    </svg>
-                    <h3>Holistic Approach</h3>
-                    <p>Addressing interconnected global challenges with comprehensive strategies.</p>
+        </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section id="mission" class="py-40 px-8 border-b border-[#66FCF1]/5 bg-[#0B0C10] relative">
+        <div class="section-index">(01)</div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-16">
+                <span class="text-[10px] tracking-[0.4em] uppercase text-[#66FCF1]">// Core Philosophy</span>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-6xl leading-[1.2] italic-serif opacity-90 tracking-tight mb-12">
+                        "We believe in a world where environmental sustainability, social equity, and economic opportunity are <span class="text-[#66FCF1]">intertwined</span>."
+                    </h2>
+                    <p class="text-base  leading-relaxed font-light max-w-lg">
+                        Our mission is to empower communities, advocate for systemic change, and implement solutions that address the root causes of global inequalities. We operate at the intersection of local action and global impact.
+                    </p>
                 </div>
-                <div class="mission-item">
-                    <svg class="mission-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <!-- Community Icon: Three People Together -->
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20.25v-2.25A2.25 2.25 0 0 0 14.75 15.75h-5.5A2.25 2.25 0 0 0 7 18v2.25" />
-                        <circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="1.5" fill="none" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 20.25v-1.5A2.25 2.25 0 0 0 17.25 16.5M4.5 20.25v-1.5A2.25 2.25 0 0 1 6.75 16.5" />
-                        <circle cx="6.75" cy="13.5" r="2.25" stroke="currentColor" stroke-width="1.5" fill="none" />
-                        <circle cx="17.25" cy="13.5" r="2.25" stroke="currentColor" stroke-width="1.5" fill="none" />
-                    </svg>
-                    <h3>Community Empowerment</h3>
-                    <p>Working alongside communities to build resilience and drive local solutions.</p>
-                </div>
-                <div class="mission-item">
-                    <svg class="mission-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <!-- Resources Icon: Book -->
-                        <!-- Iron Ingot Symbol (matching other icons) -->
-                        <rect x="7" y="10" width="10" height="4" rx="1.2" stroke="currentColor" stroke-width="1.5" fill="#F3F4F6" /> <!-- Main ingot body -->
-                        <rect x="8.5" y="11.2" width="7" height="1.6" rx="0.6" stroke="currentColor" stroke-width="0.7" fill="#E5E4E2" /> <!-- Highlight -->
-                        <path d="M7 14l2 4h6l2-4" stroke="currentColor" stroke-width="1.2" fill="none" /> <!-- Facet lines -->
-                    </svg>
-                    <h3>Advocacy for Change</h3>
-                    <p>Championing policies that promote sustainability, justice, and economic fairness.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Value 1 -->
+                    <div class="p-10 bg-[#1F2833]/20 lz-border corner-accent relative group hover:border-[#66FCF1]/40 transition-colors">
+                        <div class="card-index">(01.1)</div>
+                        <h4 class="text-[11px] uppercase tracking-[0.3em] text-[#66FCF1] mb-6 font-bold">Integrity</h4>
+                        <p class="text-xs opacity-50 leading-loose uppercase tracking-widest">Transparent action and radical accountability in every initiative we launch.</p>
+                    </div>
+                    <!-- Value 2 -->
+                    <div class="p-10 bg-[#1F2833]/20 lz-border corner-accent relative group hover:border-[#66FCF1]/40 transition-colors">
+                        <div class="card-index">(01.2)</div>
+                        <h4 class="text-[11px] uppercase tracking-[0.3em] text-[#66FCF1] mb-6 font-bold">Innovation</h4>
+                        <p class="text-xs opacity-50 leading-loose uppercase tracking-widest">Leveraging emerging technology and fresh perspectives to solve age-old problems.</p>
+                    </div>
+                    <!-- Value 3 -->
+                    <div class="p-10 bg-[#1F2833]/20 lz-border corner-accent relative group hover:border-[#66FCF1]/40 transition-colors">
+                        <div class="card-index">(01.3)</div>
+                        <h4 class="text-[11px] uppercase tracking-[0.3em] text-[#66FCF1] mb-6 font-bold">Empathy</h4>
+                        <p class="text-xs opacity-50 leading-loose uppercase tracking-widest">Human-centric design applied to social and economic systems for the common good.</p>
+                    </div>
+                    <!-- Value 4 -->
+                    <div class="p-10 bg-[#1F2833]/20 lz-border corner-accent relative group hover:border-[#66FCF1]/40 transition-colors">
+                        <div class="card-index">(01.4)</div>
+                        <h4 class="text-[11px] uppercase tracking-[0.3em] text-[#66FCF1] mb-6 font-bold">Resilience</h4>
+                        <p class="text-xs opacity-50 leading-loose uppercase tracking-widest">Building long-term strength into fragile ecosystems and vulnerable communities.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="focus-areas">
-        <div class="focus-areas-container">
-            <div class="focus-areas-header">
-                <h2>Our Focus Areas</h2>
-                <p>
-                    We concentrate our efforts on three critical, interconnected areas to maximize our impact.
+
+    <!-- Focus Areas Grid -->
+    <section id="focus-areas" class="py-32 px-8 max-w-7xl mx-auto relative">
+        <div class="section-index">(02)</div>
+        <div class="flex justify-between items-center mb-20">
+            <h2 class="text-[10px] tracking-[0.4em] uppercase text-[#66FCF1] ">// Primary Focus Areas</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#66FCF1]/10 lz-border">
+            <!-- Climate Action -->
+            <div class="p-16 bg-[#0B0C10] hover-lift corner-accent relative">
+                <div class="card-index">(02.1)</div>
+                <div class="mb-12 text-[#66FCF1]">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Climate Action</h3>
+                <p class="text-sm  leading-loose mb-10 font-light">
+                    Addressing climate change through the funding of projects that reduce emissions, promote sustainability and protect ecosystems.
                 </p>
+                <a href="issues/climate.html" class="text-[9px] uppercase tracking-[0.3em] font-bold border-b border-[#66FCF1]/30 pb-2 text-[#66FCF1] hover:border-[#66FCF1] transition-all inline-block">Learn More</a>
             </div>
-            <div class="focus-areas-grid">
-                <div class="focus-area-card">
-                    <div class="focus-area-icon">
-                        <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                        </svg>
-                    </div>
-                    <h3>Climate Action</h3>
-                    <p>Adressing climate change through the funding of projects that reduce emissions, promote sustainability and protect ecosystems .</p>
-                    <a href="#">Learn More &rarr;</a>
-                </div>
 
-                <div class="focus-area-card">
-                     <div class="focus-area-icon">
-                        <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5L3 9.75l9 5.25 9-5.25-9-5.25zm0 10.5v4.5m0 0a2.25 2.25 0 0 1-2.25-2.25m2.25 2.25a2.25 2.25 0 0 0 2.25-2.25" />
-                        </svg>
-                    </div>
-                    <h3>Social Equity</h3>
-                    <p>Confront social inequality by empowering programs that promote justice, inclusion and human rights.</p>
-                    <a href="#">Learn More &rarr;</a>
+            <!-- Social Equity -->
+            <div class="p-16 bg-[#0B0C10] hover-lift corner-accent relative">
+                <div class="card-index">(02.2)</div>
+                <div class="mb-12 text-[#66FCF1]">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M12 4.5L3 9.75l9 5.25 9-5.25-9-5.25zm0 10.5v4.5m0 0a2.25 2.25 0 0 1-2.25-2.25m2.25 2.25a2.25 2.25 0 0 0 2.25-2.25" />
+                    </svg>
                 </div>
+                <h3 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Social Equity</h3>
+                <p class="text-sm  leading-loose mb-10 font-light">
+                    Confront social inequality by empowering programs that promote justice, inclusion and human rights.
+                </p>
+                <a href="issues/social.html" class="text-[9px] uppercase tracking-[0.3em] font-bold border-b border-[#66FCF1]/30 pb-2 text-[#66FCF1] hover:border-[#66FCF1] transition-all inline-block">Learn More</a>
+            </div>
 
-                <div class="focus-area-card">
-                     <div class="focus-area-icon">
-                        <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
-                        </svg>
-                    </div>
-                    <h3>Economic Empowerment</h3>
-                    <p>Tackling economic instability by supporting initiatives that foster equitable growth and financial resilience..</p>
-                    <a href="#">Learn More &rarr;</a>
+            <!-- Economic Empowerment -->
+            <div class="p-16 bg-[#0B0C10] hover-lift corner-accent relative">
+                <div class="card-index">(02.3)</div>
+                <div class="mb-12 text-[#66FCF1]">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Economic Power</h3>
+                <p class="text-sm  leading-loose mb-10 font-light">
+                    Tackling economic instability by supporting initiatives that foster equitable growth and financial resilience.
+                </p>
+                <a href="issues/economic.html" class="text-[9px] uppercase tracking-[0.3em] font-bold border-b border-[#66FCF1]/30 pb-2 text-[#66FCF1] hover:border-[#66FCF1] transition-all inline-block">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner CTA -->
+    <section class="py-40 px-8 bg-[#1F2833]/20 border-y border-[#66FCF1]/10 relative">
+        <div class="section-index">(03)</div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-start items-center mb-16">
+                <h2 class="text-[10px] tracking-[0.4em] uppercase text-[#66FCF1] ">// Take Action</h2>
+            </div>
+            <div class="text-center">
+                <p class="text-[#66FCF1] mb-16 max-w-xl mx-auto text-sm leading-relaxed uppercase tracking-widest">
+                    Be the catalyst for change. Support our programs or partner with our trusted organizations to scale global impact.
+                </p>
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                    <a href="take-action/programs.html" class="px-14 py-5 bg-[#66FCF1] text-black font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-[#45A29E] transition-all">
+                        Our Programs
+                    </a>
+                    <a href="take-action/trusted-organizations.html" class="lz-border-accent px-14 py-5 text-[#66FCF1] font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-[#66FCF1] hover:text-black transition-all">
+                        Trusted Partners
+                    </a>
                 </div>
             </div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 Foundation</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-32 px-8 border-t border-[#66FCF1]/10 relative">
+        <div class="section-index">(04)</div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
+            <div class="max-w-xs">
+                <div class="flex items-center gap-3 mb-10">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#66FCF1" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="3" />
+                        <circle cx="4.5" cy="4.5" r="2" />
+                        <circle cx="19.5" cy="4.5" r="2" />
+                        <circle cx="4.5" cy="19.5" r="2" />
+                        <circle cx="19.5" cy="19.5" r="2" />
+                        <line x1="12" y1="9" x2="12" y2="4.5" />
+                        <line x1="12" y1="15" x2="12" y2="19.5" />
+                        <line x1="9" y1="12" x2="4.5" y2="12" />
+                        <line x1="15" y1="12" x2="19.5" y2="12" />
+                    </svg>
+                    <a href="index.html" class="text-xl font-bold tracking-tighter uppercase text-white">Foundation</a>
+                </div>
+                <p class="text-[10px] opacity-40 leading-[2] uppercase tracking-[0.2em]">
+                    Advocating for systemic change, climate resilience, and social justice through decentralized community action.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-24">
+                <div class="space-y-6">
+                    <div class="text-[9px] uppercase tracking-[0.4em] text-[#66FCF1] mb-8">// Issues</div>
+                    <a href="issues/climate.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Climate</a>
+                    <a href="issues/economic.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Economic</a>
+                    <a href="issues/social.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Social</a>
+                </div>
+                <div class="space-y-6">
+                    <div class="text-[9px] uppercase tracking-[0.4em] text-[#66FCF1] mb-8">// Navigation</div>
+                    <a href="about.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">About Us</a>
+                    <a href="take-action.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Take Action</a>
+                    <a href="index.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Home</a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-32 pt-10 border-t border-[#66FCF1]/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] opacity-40 uppercase tracking-[0.3em]">
+            <div>&copy; 2026 Foundation Collective</div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-[#66FCF1]">Privacy</a>
+                <a href="#" class="hover:text-[#66FCF1]">Terms</a>
+                <a href="#" class="hover:text-[#66FCF1]">Impact Report</a>
+            </div>
+        </div>
     </footer>
-    </div>
-    <script src="js/hamburger.js"></script>
+
 </body>
 </html>
