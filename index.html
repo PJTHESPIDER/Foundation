@@ -99,9 +99,35 @@
             <a href="index.html" class="text-xl font-bold tracking-tighter uppercase text-white">Foundation</a>
         </div>
         
-        <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.3em]">
-            <a href="issues.html" class="hover:text-[#66FCF1] transition-colors">Issues</a>
-            <a href="take-action.html" class="hover:text-[#66FCF1] transition-colors">Take Action</a>
+        <div class="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.3em]">
+            <div class="relative group py-3">
+                <a href="issues.html" class="flex items-center gap-2 hover:text-[#66FCF1] transition-colors">
+                    <span>Issues</span>
+                    <span class="text-[8px]">▾</span>
+                </a>
+                <div class="absolute left-0 top-full hidden min-w-[220px] flex-col pt-2 z-50 group-hover:flex group-focus-within:flex">
+                    <div class="flex flex-col rounded-md border border-[#66FCF1]/20 bg-[#0B0C10]/95 p-2 shadow-xl backdrop-blur-md">
+                        <a href="issues/climate.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Climate Action</a>
+                        <a href="issues/social.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Social Equity</a>
+                        <a href="issues/economic.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Economic Power</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group py-3">
+                <a href="take-action.html" class="flex items-center gap-2 hover:text-[#66FCF1] transition-colors">
+                    <span>Take Action</span>
+                    <span class="text-[8px]">▾</span>
+                </a>
+                <div class="absolute left-0 top-full hidden min-w-[220px] flex-col pt-2 z-50 group-hover:flex group-focus-within:flex">
+                    <div class="flex flex-col rounded-md border border-[#66FCF1]/20 bg-[#0B0C10]/95 p-2 shadow-xl backdrop-blur-md">
+                        <a href="take-action/programs.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Programs</a>
+                        <a href="take-action/donate.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Donate</a>
+                        <a href="take-action/trusted-organizations.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Trusted Organizations</a>
+                    </div>
+                </div>
+            </div>
+
             <a href="about.html" class="hover:text-[#66FCF1] transition-colors">About</a>
         </div>
 
@@ -152,7 +178,7 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
                     <!-- Value 1 -->
                     <div class="p-10 bg-[#1F2833]/20 lz-border corner-accent relative group hover:border-[#66FCF1]/40 transition-colors">
                         <div class="card-index">(01.1)</div>

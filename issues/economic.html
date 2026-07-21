@@ -3,81 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Economic - Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --lz-black: #0B0C10; --lz-light-gray: #C5C6C7; --lz-accent: #66FCF1; }
+        body { background-color: var(--lz-black); color: var(--lz-light-gray); font-family: 'IBM Plex Mono', monospace; -webkit-font-smoothing: antialiased; }
+        .lz-border { border: 1px solid rgba(102, 252, 241, 0.1); }
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, #1F2833 0%, #0B0C10 100%); }
+        .italic-serif { font-style: italic; letter-spacing: -0.02em; color: #FFFFFF; }
+        .section-index { position: absolute; top: 2rem; right: 2rem; font-size: 10px; letter-spacing: 0.2em; color: var(--lz-accent); opacity: 0.6; }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="logo"><a href="../index.html">Foundation</a></div>
-        <nav class="nav-container">
-            <ul>
-                <li class="dropdown">
-                    <a href="../issues.html">Issues</a>
-                    <ul class="dropdown-content">
-                        <li><a href="climate.html">Climate</a></li>
-                        <li><a href="economic.html">Economic</a></li>
-                        <li><a href="social.html">Social</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" >
-                    <a href="../take-action.html">Take Action</a>
-                    <ul class="dropdown-content">
-                        <li><a href="../take-action/programs.html">Our Programs</a></li>
-                        <li><a href="../take-action/trusted-organizations.html">Trusted Organizations</a></li>
-                    </ul>
-                </li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../take-action/programs.html" class="nav-donate-button">Donate</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger-icon" tabindex="0" aria-label="Open navigation menu">&#9776;</div>
-        <nav class="mobile-menu" aria-label="Mobile Navigation">
-            <ul>
-                <li class="dropdown">
-                    <a href="../issues.html">Issues</a>
-                    <ul class="dropdown-content">
-                        <li><a href="climate.html">Climate</a></li>
-                        <li><a href="economic.html">Economic</a></li>
-                        <li><a href="social.html">Social</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="../take-action.html">Take Action</a>
-                    <ul class="dropdown-content">
-                        <li><a href="../take-action/programs.html">Our Programs</a></li>
-                        <li><a href="../take-action/trusted-organizations.html">Trusted Organizations</a></li>
-                    </ul>
-                </li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../take-action/programs.html" class="nav-donate-button">Donate</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="info-card-section">
-            <div class="info-card">
-                <h2>Economic</h2>
-                <p>There are a number of economic issues including Inflation, Food Insecurity, and Economic Inequality that cause individuals to suffer a substandard quality of life.</p>
+<body class="selection:bg-[#66FCF1] selection:text-black">
+    <nav class="py-6 px-8 flex justify-between items-center sticky top-0 bg-[#0B0C10]/90 backdrop-blur-md z-50 border-b border-[#66FCF1]/10">
+        <div class="flex items-center gap-3">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#66FCF1" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3" />
+                <circle cx="4.5" cy="4.5" r="2" />
+                <circle cx="19.5" cy="4.5" r="2" />
+                <circle cx="4.5" cy="19.5" r="2" />
+                <circle cx="19.5" cy="19.5" r="2" />
+            </svg>
+            <a href="../index.html" class="text-xl font-bold tracking-tighter uppercase text-white">Foundation</a>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.3em]">
+            <div class="relative group py-3">
+                <a href="../issues.html" class="flex items-center gap-2 hover:text-[#66FCF1] transition-colors">
+                    <span>Issues</span>
+                    <span class="text-[8px]">▾</span>
+                </a>
+                <div class="absolute left-0 top-full hidden min-w-[220px] flex-col pt-2 z-50 group-hover:flex group-focus-within:flex">
+                    <div class="flex flex-col rounded-md border border-[#66FCF1]/20 bg-[#0B0C10]/95 p-2 shadow-xl backdrop-blur-md">
+                        <a href="climate.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Climate Action</a>
+                        <a href="social.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Social Equity</a>
+                        <a href="economic.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Economic Power</a>
+                    </div>
+                </div>
             </div>
-            <div class="info-card">
-                <h2>Inflation</h2>
-                <p>Inflation is the rate at which the general level of prices for goods and services is rising and the purchasing power of currency is falling.</p>
+            <div class="relative group py-3">
+                <a href="../take-action.html" class="flex items-center gap-2 hover:text-[#66FCF1] transition-colors">
+                    <span>Take Action</span>
+                    <span class="text-[8px]">▾</span>
+                </a>
+                <div class="absolute left-0 top-full hidden min-w-[220px] flex-col pt-2 z-50 group-hover:flex group-focus-within:flex">
+                    <div class="flex flex-col rounded-md border border-[#66FCF1]/20 bg-[#0B0C10]/95 p-2 shadow-xl backdrop-blur-md">
+                        <a href="../take-action/programs.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Programs</a>
+                        <a href="../take-action/donate.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Donate</a>
+                        <a href="../take-action/trusted-organizations.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors">Trusted Organizations</a>
+                    </div>
+                </div>
             </div>
-            <div class="info-card">
-                <h2>Food Insecurity</h2>
-                <p>Food insecurity is a situation where people do not have consistent access to enough food for an active, healthy life.</p>
-            </div>
-            <div class="info-card">
-                <h2>Economic Inequality</h2>
-                <p>Economic inequality is the uneven distribution of wealth and income within a society.</p>
-            </div>
+            <a href="../about.html" class="hover:text-[#66FCF1] transition-colors">About</a>
+        </div>
+        <a href="../take-action/programs.html" class="lz-border px-6 py-2 bg-[#66FCF1] text-black font-bold text-[10px] uppercase tracking-widest hover:bg-transparent hover:text-[#66FCF1] transition-all">Donate</a>
+    </nav>
+
+    <section class="hero-gradient min-h-[70vh] flex flex-col justify-center items-center px-6 text-center border-b border-[#66FCF1]/5 relative">
+        <div class="section-index">(05)</div>
+        <div class="max-w-5xl w-full mt-20">
+            <h1 class="text-5xl md:text-8xl font-bold mb-10 italic-serif tracking-tighter leading-[0.9]">Economic <span class="text-[#66FCF1]">Opportunity</span></h1>
+            <p class="max-w-2xl mx-auto text-base md:text-lg opacity-80 mb-14 font-light leading-relaxed">Economic stability and equitable growth are essential to creating lasting improvements in health, education, and opportunity.</p>
+        </div>
+    </section>
+
+    <main class="py-24 px-8">
+        <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="p-10 bg-[#1F2833]/20 lz-border"><h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Economic Overview</h2><p class="text-sm leading-loose text-[#C5C6C7]">Inflation, food insecurity, and widening inequality continue to threaten wellbeing and stability in many communities.</p></div>
+            <div class="p-10 bg-[#1F2833]/20 lz-border"><h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Inflation</h2><p class="text-sm leading-loose text-[#C5C6C7]">Inflation erodes purchasing power and makes essentials harder to afford, especially for low-income households.</p></div>
+            <div class="p-10 bg-[#1F2833]/20 lz-border"><h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Food Insecurity</h2><p class="text-sm leading-loose text-[#C5C6C7]">Food insecurity undermines health and stability, often reflecting deeper inequalities in access and affordability.</p></div>
+            <div class="p-10 bg-[#1F2833]/20 lz-border"><h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Economic Inequality</h2><p class="text-sm leading-loose text-[#C5C6C7]">Unequal access to wealth, opportunity, and resources keeps communities from fully participating in shared prosperity.</p></div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Foundation</p>
+
+    <footer class="py-24 px-8 border-t border-[#66FCF1]/10">
+        <div class="max-w-7xl mx-auto text-center text-[10px] opacity-40 uppercase tracking-[0.2em]">&copy; 2026 Foundation Collective</div>
     </footer>
-    <script src="../js/hamburger.js"></script>
 </body>
 </html>
