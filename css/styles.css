@@ -615,6 +615,42 @@ footer {
     --font-mono: 'IBM Plex Mono', monospace;
 }
 
+.lz-border {
+    border: 1px solid rgba(102, 252, 241, 0.1);
+}
+.lz-border-accent {
+    border: 1px solid var(--accent-color);
+}
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-lift:hover {
+    background: rgba(102, 252, 241, 0.03);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+.corner-accent {
+    position: relative;
+}
+.corner-accent::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+}
+.card-index {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 9px;
+    color: var(--accent-color);
+    opacity: 0.6;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
