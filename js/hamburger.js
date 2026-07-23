@@ -2,12 +2,21 @@
 // This script works for both root and subpages if included with the correct relative path.
 document.addEventListener('DOMContentLoaded', function() {
     var hamburger = document.querySelector('.hamburger-icon');
+    var closeButton = document.querySelector('.mobile-menu-close');
     var mobileMenu = document.querySelector('.mobile-menu');
     var body = document.body;
     function toggleMenu() {
         mobileMenu.classList.toggle('open');
         if (mobileMenu.classList.contains('open')) {
             body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
+    }
+    function closeMenu() {
+        if (mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            body.style.overflow = '';
         } else {
             body.style.overflow = '';
         }
@@ -21,16 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    if (closeButton) {
+        closeButton.addEventListener('click', closeMenu);
+    }
     // Optional: Close menu when clicking outside or on a link
     document.addEventListener('click', function(e) {
-        if (mobileMenu && mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && e.target !== hamburger) {
+        if (mobileMenu && mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)) {
             mobileMenu.classList.remove('open');
             body.style.overflow = '';
         }
     });
     // Optional: Close menu when a link is clicked
     if (mobileMenu) {
-        mobileMenu.querySelectorAll('a').forEach(function(link) {
+        var links = mobileMenu.querySelectorAll('a');
+        links.forEach(function(link) {
             link.addEventListener('click', function() {
                 mobileMenu.classList.remove('open');
                 body.style.overflow = '';

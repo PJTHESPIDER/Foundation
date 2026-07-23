@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ibm-plex-mono-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/ibm-plex-mono-v19-latin-regular.woff2') format('woff2');
+}
+/* ibm-plex-mono-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/ibm-plex-mono-v19-latin-500.woff2') format('woff2');
+}
+/* ibm-plex-mono-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/ibm-plex-mono-v19-latin-700.woff2') format('woff2');
+}
+
+@layer base {
+    :root {
+        --lz-black: #0B0C10;
+        --lz-dark-gray: #1F2833;
+        --lz-light-gray: #C5C6C7;
+        --lz-accent: #66FCF1;
+        --lz-accent-dim: #45A29E;
+    }
+
+    body {
+        background-color: var(--lz-black);
+        color: var(--lz-light-gray);
+        font-family: 'IBM Plex Mono', monospace;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+@layer components {
+    .lz-border {
+        border: 1px solid rgba(102, 252, 241, 0.1);
+    }
+
+    .lz-border-accent {
+        border: 1px solid var(--lz-accent);
+    }
+
+    .hero-gradient {
+        background: radial-gradient(circle at 50% 50%, #1F2833 0%, #0B0C10 100%);
+    }
+
+    .hover-lift {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hover-lift:hover {
+        background: rgba(102, 252, 241, 0.03);
+        border-color: var(--lz-accent);
+        transform: translateY(-2px);
+    }
+
+    .corner-accent {
+        position: relative;
+    }
+
+    .corner-accent::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid var(--lz-accent);
+        border-right: 1px solid var(--lz-accent);
+    }
+
+    .text-accent {
+        color: var(--lz-accent);
+    }
+
+    .bg-accent {
+        background-color: var(--lz-accent);
+    }
+
+    .section-index {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        color: var(--lz-accent);
+        opacity: 0.6;
+    }
+
+    .card-index {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 9px;
+        color: var(--lz-accent);
+        opacity: 0.6;
+    }
+
+    .hamburger-icon {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid rgba(102, 252, 241, 0.45);
+        border-radius: 0.75rem;
+        background: rgba(11, 12, 16, 0.9);
+        color: var(--lz-accent);
+        position: relative;
+        cursor: pointer;
+    }
+
+    .hamburger-icon span {
+        display: block;
+        width: 1.4rem;
+        height: 2px;
+        background-color: currentColor;
+        position: relative;
+        border-radius: 999px;
+    }
+
+    .hamburger-icon span::before,
+    .hamburger-icon span::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 1.4rem;
+        height: 2px;
+        background-color: currentColor;
+        border-radius: 999px;
+    }
+
+    .hamburger-icon span::before {
+        top: -0.5rem;
+    }
+
+    .hamburger-icon span::after {
+        top: 0.5rem;
+    }
+
+    .hamburger-icon:hover {
+        border-color: var(--lz-accent);
+        background: rgba(102, 252, 241, 0.08);
+    }
+
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        inset: 0;
+        padding: 5rem 1.5rem 2rem;
+        background: rgba(11, 12, 16, 0.98);
+        backdrop-filter: blur(14px);
+        z-index: 60;
+        border: 1px solid rgba(102, 252, 241, 0.45);
+        border-radius: 1rem;
+        overflow-y: auto;
+    }
+
+    .mobile-menu.open {
+        display: block;
+    }
+
+    .mobile-menu nav {
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .mobile-menu li {
+        border-bottom: 1px solid rgba(102, 252, 241, 0.18);
+        padding-bottom: 0.75rem;
+    }
+
+    .mobile-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu a {
+        display: block;
+        color: var(--lz-light-gray);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid rgba(102, 252, 241, 0.14);
+    }
+
+    .mobile-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu a:hover {
+        color: var(--lz-accent);
+    }
+
+    .mobile-menu .submenu {
+        padding-left: 1rem;
+        margin-top: 0.5rem;
+        border: 1px solid var(--lz-accent);
+    }
+
+    .mobile-menu .submenu a {
+        letter-spacing: 0.14em;
+        font-size: 0.85rem;
+        color: #c5c6c7;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid var(--lz-accent-dim);
+    }
+
+    .mobile-menu .submenu a:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 767px) {
+        .hamburger-icon {
+            display: inline-flex;
+        }
+    }
+}
