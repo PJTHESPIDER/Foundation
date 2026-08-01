@@ -5,204 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climate - Foundation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --lz-black: #0B0C10;
-            --lz-dark-gray: #1F2833;
-            --lz-light-gray: #C5C6C7;
-            --lz-accent: #66FCF1;
-            --lz-accent-dim: #45A29E;
-        }
-
-        body {
-            background-color: var(--lz-black);
-            color: var(--lz-light-gray);
-            font-family: 'IBM Plex Mono', monospace;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .lz-border {
-            border: 1px solid rgba(102, 252, 241, 0.1);
-        }
-
-        .lz-border-accent {
-            border: 1px solid var(--lz-accent);
-        }
-
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, #1F2833 0%, #0B0C10 100%);
-        }
-
-        .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .hover-lift:hover {
-            background: rgba(102, 252, 241, 0.03);
-            border-color: var(--lz-accent);
-            transform: translateY(-2px);
-        }
-
-        .corner-accent {
-            position: relative;
-        }
-
-        .corner-accent::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 8px;
-            height: 8px;
-            border-top: 1px solid var(--lz-accent);
-            border-right: 1px solid var(--lz-accent);
-        }
-
-        .italic-serif {
-            font-style: italic;
-            letter-spacing: -0.02em;
-            color: #FFFFFF;
-        }
-
-        .section-index {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 10px;
-            letter-spacing: 0.2em;
-            color: var(--lz-accent);
-            opacity: 0.6;
-        }
-
-        .card-index {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 9px;
-            color: var(--lz-accent);
-            opacity: 0.6;
-        }
-        .hamburger-icon {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            border: 1px solid rgba(102, 252, 241, 0.45);
-            border-radius: 0.75rem;
-            background: rgba(11, 12, 16, 0.9);
-            color: var(--lz-accent);
-            position: relative;
-            cursor: pointer;
-        }
-        .hamburger-icon span {
-            display: block;
-            width: 1.4rem;
-            height: 2px;
-            background-color: currentColor;
-            position: relative;
-            border-radius: 999px;
-        }
-        .hamburger-icon span::before,
-        .hamburger-icon span::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            width: 1.4rem;
-            height: 2px;
-            background-color: currentColor;
-            border-radius: 999px;
-        }
-        .hamburger-icon span::before {
-            top: -0.5rem;
-        }
-        .hamburger-icon span::after {
-            top: 0.5rem;
-        }
-        .hamburger-icon:hover {
-            border-color: var(--lz-accent);
-            background: rgba(102, 252, 241, 0.08);
-        }
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            inset: 0;
-            padding: 5rem 1.5rem 2rem;
-            background: rgba(11, 12, 16, 0.98);
-            backdrop-filter: blur(14px);
-            z-index: 60;
-            border: 1px solid rgba(102, 252, 241, 0.45);
-            border-radius: 1rem;
-            overflow-y: auto;
-        }
-        .mobile-menu.open {
-            display: block;
-        }
-        .mobile-menu nav {
-            max-width: 30rem;
-            margin: 0 auto;
-        }
-        .mobile-menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: grid;
-            gap: 1rem;
-        }
-        .mobile-menu li {
-            border-bottom: 1px solid rgba(102, 252, 241, 0.18);
-            padding-bottom: 0.75rem;
-        }
-        .mobile-menu li:last-child {
-            border-bottom: none;
-        }
-        .mobile-menu a {
-            display: block;
-            color: var(--lz-light-gray);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            padding: 0.85rem 0;
-            border-bottom: 1px solid rgba(102, 252, 241, 0.14);
-        }
-        .mobile-menu a:last-child {
-            border-bottom: none;
-        }
-        .mobile-menu a:hover {
-            color: var(--lz-accent);
-        }
-        .mobile-menu .submenu {
-            padding-left: 1rem;
-            margin-top: 0.5rem;
-            border: 1px solid var(--lz-accent);
-        }
-        .mobile-menu .submenu a {
-            letter-spacing: 0.14em;
-            font-size: 0.85rem;
-            color: #c5c6c7;
-            padding-bottom: 0.6rem;
-            border-bottom: 1px solid var(--lz-accent-dim);
-        }
-        .mobile-menu .submenu a:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-        @media (max-width: 767px) {
-            .hamburger-icon {
-                display: inline-flex;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
-<body class="selection:bg-[#66FCF1] selection:text-black">
+<body>
 
     <!-- Navigation -->
-    <nav class="py-6 px-8 flex justify-between items-center sticky top-0 bg-[#0B0C10]/90 backdrop-blur-md z-50 border-b border-[#66FCF1]/10">
-        <div class="flex items-center gap-3">
+    <nav class="main-nav">
+        <div class="nav-logo-container">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#66FCF1" stroke-width="1.5">
                 <circle cx="12" cy="12" r="3" />
                 <circle cx="4.5" cy="4.5" r="2" />
@@ -214,54 +24,54 @@
                 <line x1="9" y1="12" x2="4.5" y2="12" />
                 <line x1="15" y1="12" x2="19.5" y2="12" />
             </svg>
-            <a href="../index.html" class="text-xl font-bold tracking-tighter uppercase text-white">Foundation</a>
+            <a href="../index.html" class="nav-logo-text">Foundation</a>
         </div>
-
-        <div class="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.3em]">
-            <div class="relative group py-3">
-                <a href="../issues.html" class="flex items-center gap-2 hover:text-[#66FCF1] transition-colors">
+        
+        <div class="nav-link-group">
+            <div class="nav-dropdown-wrapper">
+                <a href="../issues.html" class="nav-dropdown-toggle">
                     <span>Issues</span>
-                    <span class="text-[8px]">▾</span>
+                    <span style="font-size: 8px;">▾</span>
                 </a>
-                <div class="absolute left-0 top-full hidden min-w-[220px] flex-col pt-2 z-50 group-hover:flex group-focus-within:flex">
-                    <div class="flex flex-col rounded-md border border-[#66FCF1]/20 bg-[#0B0C10]/95 p-2 shadow-xl backdrop-blur-md corner-accent">
-                        <a href="climate.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors border-b border-[#66FCF1]/10">Climate Action</a>
-                        <a href="social.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors border-b border-[#66FCF1]/10">Social Equity</a>
-                        <a href="economic.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors border-b-0">Economic Power</a>
+                <div class="nav-dropdown-menu">
+                    <div class="nav-dropdown-content">
+                        <a href="climate.html" class="nav-dropdown-link">Climate Action</a>
+                        <a href="social.html" class="nav-dropdown-link">Social Equity</a>
+                        <a href="economic.html" class="nav-dropdown-link">Economic Power</a>
                     </div>
                 </div>
             </div>
 
-            <div class="relative group py-3">
-                <a href="../take-action.html" class="flex items-center gap-2 hover:text-[#66FCF1] transition-colors">
+            <div class="nav-dropdown-wrapper">
+                <a href="../take-action.html" class="nav-dropdown-toggle">
                     <span>Take Action</span>
-                    <span class="text-[8px]">▾</span>
+                    <span style="font-size: 8px;">▾</span>
                 </a>
-                <div class="absolute left-0 top-full hidden min-w-[220px] flex-col pt-2 z-50 group-hover:flex group-focus-within:flex">
-                    <div class="flex flex-col rounded-md border border-[#66FCF1]/20 bg-[#0B0C10]/95 p-2 shadow-xl backdrop-blur-md corner-accent">
-                        <a href="../take-action/programs.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors border-b border-[#66FCF1]/10">Programs</a>
-                        <a href="../take-action/donate.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors border-b border-[#66FCF1]/10">Donate</a>
-                        <a href="../take-action/trusted-organizations.html" class="px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-[#C5C6C7] hover:text-[#66FCF1] transition-colors border-b-0">Trusted Organizations</a>
+                <div class="nav-dropdown-menu">
+                    <div class="nav-dropdown-content">
+                        <a href="../take-action/programs.html" class="nav-dropdown-link">Programs</a>
+                        <a href="../take-action/donate.html" class="nav-dropdown-link">Donate</a>
+                        <a href="../take-action/trusted-organizations.html" class="nav-dropdown-link">Trusted Organizations</a>
                     </div>
                 </div>
             </div>
 
-            <a href="../about.html" class="hover:text-[#66FCF1] transition-colors">About</a>
+            <a href="../about.html" class="nav-about-link">About</a>
         </div>
 
-        <button type="button" class="hamburger-icon md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+        <button type="button" class="hamburger-icon" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
             <span></span>
         </button>
 
-        <a href="../take-action/programs.html" class="lz-border-accent px-6 py-2 bg-[#66FCF1] text-black font-bold text-[10px] uppercase tracking-widest hover:bg-transparent hover:text-[#66FCF1] transition-all hidden md:inline-block">
+        <a href="../take-action/programs.html" class="lz-border-accent nav-donate-button">
             Donate
         </a>
     </nav>
 
     <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
         <nav>
-            <div class="flex justify-end mb-6">
-                <button type="button" class="mobile-menu-close text-[#66FCF1] uppercase tracking-[0.3em] text-[10px] font-bold">Close</button>
+            <div class="mobile-menu-close-button-container">
+                <button type="button" class="mobile-menu-close">Close</button>
             </div>
             <ul>
                 <li>
@@ -284,49 +94,48 @@
                     <a href="../about.html">About</a>
                 </li>
                 <li>
-                    <a href="../take-action/programs.html" class="text-[#66FCF1]">Donate</a>
+                    <a href="../take-action/programs.html" class="mobile-menu-donate-link">Donate</a>
                 </li>
             </ul>
         </nav>
     </div>
 
-    <section
-        class="hero-gradient min-h-[70vh] flex flex-col justify-center items-center px-6 text-center border-b border-[#66FCF1]/5 relative">
+    <section class="hero-gradient hero-section" style="min-height: 70vh;">
         <div class="section-index">(04)</div>
-        <div class="max-w-5xl w-full mt-20">
-            <h1 class="text-5xl md:text-8xl font-bold mb-10 italic-serif tracking-tighter leading-[0.9]">Climate <span
-                    class="text-[#66FCF1]">Action</span></h1>
-            <p class="max-w-2xl mx-auto text-base md:text-lg opacity-80 mb-14 font-light leading-relaxed">Climate
+        <div class="hero-content" style="max-width: 64rem; margin-top: 5rem;">
+            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 2.5rem;">
+                Climate <span class="hero-title-accent">Action</span></h1>
+            <p class="hero-description" style="max-width: 42rem; margin-bottom: 3.5rem;">Climate
                 challenges are urgent, interconnected, and demand local action supported by global cooperation.</p>
         </div>
     </section>
 
-    <main class="py-24 px-8">
-        <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-[#66FCF1]/10 lz-border">
-            <div class="p-10 bg-[#0B0C10] hover-lift corner-accent relative">
+    <main style="padding-top: 6rem; padding-bottom: 6rem; padding-left: 2rem; padding-right: 2rem;">
+        <section class="focus-grid lz-border" style="max-width: 80rem; margin: auto; grid-template-columns: repeat(2, 1fr);">
+            <div class="focus-card hover-lift corner-accent">
                 <div class="card-index">(04.1)</div>
-                <h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Climate Overview</h2>
-                <p class="text-sm leading-loose text-[#C5C6C7]">A variety of environmental pressures—pollution, water
+                <h2 class="focus-card-title" style="font-size: 1.5rem;">Climate Overview</h2>
+                <p class="focus-card-description" style="font-size: 0.875rem;">A variety of environmental pressures—pollution, water
                     scarcity, deforestation, and biodiversity loss—are accelerating the climate crisis and affecting
                     millions of communities.</p>
             </div>
-            <div class="p-10 bg-[#0B0C10] hover-lift corner-accent relative">
+            <div class="focus-card hover-lift corner-accent">
                 <div class="card-index">(04.2)</div>
-                <h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Pollution</h2>
-                <p class="text-sm leading-loose text-[#C5C6C7]">Air and water pollution degrade ecosystems and create
+                <h2 class="focus-card-title" style="font-size: 1.5rem;">Pollution</h2>
+                <p class="focus-card-description" style="font-size: 0.875rem;">Air and water pollution degrade ecosystems and create
                     major public health risks, especially in underserved regions.</p>
             </div>
-            <div class="p-10 bg-[#0B0C10] hover-lift corner-accent relative">
+            <div class="focus-card hover-lift corner-accent">
                 <div class="card-index">(04.3)</div>
-                <h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Water Scarcity</h2>
-                <p class="text-sm leading-loose text-[#C5C6C7]">Water stress is rising as demand grows and climate
+                <h2 class="focus-card-title" style="font-size: 1.5rem;">Water Scarcity</h2>
+                <p class="focus-card-description" style="font-size: 0.875rem;">Water stress is rising as demand grows and climate
                     impacts intensify, threatening agriculture, health, and livelihoods.</p>
             </div>
-            <div class="p-10 bg-[#0B0C10] hover-lift corner-accent relative">
+            <div class="focus-card hover-lift corner-accent">
                 <div class="card-index">(04.4)</div>
-                <h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter italic text-white">Deforestation &amp; Soil
+                <h2 class="focus-card-title" style="font-size: 1.5rem;">Deforestation &amp; Soil
                     Health</h2>
-                <p class="text-sm leading-loose text-[#C5C6C7]">Forest loss and soil degradation reduce resilience and
+                <p class="focus-card-description" style="font-size: 0.875rem;">Forest loss and soil degradation reduce resilience and
                     accelerate carbon emissions, making restoration essential.</p>
             </div>
         </section>
@@ -335,11 +144,11 @@
     <script src="../js/hamburger.js"></script>
 
     <!-- Footer -->
-    <footer class="py-32 px-8 border-t border-[#66FCF1]/10 relative">
+    <footer class="footer">
         <div class="section-index">(04)</div>
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
-            <div class="max-w-xs">
-                <div class="flex items-center gap-3 mb-10">
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <div class="footer-logo-link-container">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#66FCF1" stroke-width="1.5">
                         <circle cx="12" cy="12" r="3" />
                         <circle cx="4.5" cy="4.5" r="2" />
@@ -351,34 +160,34 @@
                         <line x1="9" y1="12" x2="4.5" y2="12" />
                         <line x1="15" y1="12" x2="19.5" y2="12" />
                     </svg>
-                    <a href="../index.html" class="text-xl font-bold tracking-tighter uppercase text-white">Foundation</a>
+                    <a href="../index.html" class="footer-logo-link">Foundation</a>
                 </div>
-                <p class="text-[10px] opacity-40 leading-[2] uppercase tracking-[0.2em]">
+                <p class="footer-description">
                     Advocating for systemic change, climate resilience, and social justice through decentralized community action.
                 </p>
             </div>
             
-            <div class="grid grid-cols-2 gap-24">
-                <div class="space-y-6">
-                    <div class="text-[9px] uppercase tracking-[0.4em] text-[#66FCF1] mb-8">// Issues</div>
-                    <a href="../issues/climate.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Climate</a>
-                    <a href="../issues/economic.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Economic</a>
-                    <a href="../issues/social.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Social</a>
+            <div class="footer-links-grid">
+                <div class="footer-links-column">
+                    <div class="footer-links-title">// Issues</div>
+                    <a href="../issues/climate.html" class="footer-link">Climate</a>
+                    <a href="../issues/economic.html" class="footer-link">Economic</a>
+                    <a href="../issues/social.html" class="footer-link">Social</a>
                 </div>
-                <div class="space-y-6">
-                    <div class="text-[9px] uppercase tracking-[0.4em] text-[#66FCF1] mb-8">// Navigation</div>
-                    <a href="../about.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">About Us</a>
-                    <a href="../take-action.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Take Action</a>
-                    <a href="../index.html" class="block text-[10px]  hover:text-[#66FCF1] transition-all uppercase tracking-widest">Home</a>
+                <div class="footer-links-column">
+                    <div class="footer-links-title">// Navigation</div>
+                    <a href="../about.html" class="footer-link">About Us</a>
+                    <a href="../take-action.html" class="footer-link">Take Action</a>
+                    <a href="../index.html" class="footer-link">Home</a>
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-32 pt-10 border-t border-[#66FCF1]/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] opacity-40 uppercase tracking-[0.3em]">
+        <div class="footer-bottom">
             <div>&copy; 2026 Foundation Collective</div>
-            <div class="flex gap-8">
-                <a href="#" class="hover:text-[#66FCF1]">Privacy</a>
-                <a href="#" class="hover:text-[#66FCF1]">Terms</a>
-                <a href="#" class="hover:text-[#66FCF1]">Impact Report</a>
+            <div class="footer-bottom-links">
+                <a href="#" class="footer-bottom-link">Privacy</a>
+                <a href="#" class="footer-bottom-link">Terms</a>
+                <a href="#" class="footer-bottom-link">Impact Report</a>
             </div>
         </div>
     </footer>
