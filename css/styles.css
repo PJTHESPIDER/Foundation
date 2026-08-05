@@ -270,12 +270,13 @@
             justify-content: center;
             width: 3rem;
             height: 3rem;
-            border: 1px solid var(--lz-accent-transparent-45);
+            border: 1px solid var(--lz-accent-transparent-20);
             border-radius: 0.75rem;
-            background: var(--lz-black-transparent-90);
+            background: var(--lz-black-transparent-95);
             color: var(--lz-accent);
             position: relative;
             cursor: pointer;
+            transition: border-color var(--lz-transition-duration) var(--lz-transition-timing-function), background-color var(--lz-transition-duration) var(--lz-transition-timing-function);
         }
         .hamburger-icon span {
             display: block;
@@ -309,13 +310,11 @@
             display: none;
             position: fixed;
             inset: 0;
-            padding: 5rem 1.5rem 2rem;
-            background: var(--lz-black-transparent-98);
+            padding: 4rem 1.5rem 2rem;
+            background: rgba(11, 12, 16, 0.82);
             -webkit-backdrop-filter: blur(14px);
             backdrop-filter: blur(14px);
             z-index: 60;
-            border: 1px solid rgba(102, 252, 241, 0.45);
-            border-radius: 1rem;
             overflow-y: auto;
         }
         .mobile-menu.open {
@@ -324,6 +323,13 @@
         .mobile-menu nav {
             max-width: 30rem;
             margin: 0 auto;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid var(--lz-accent-transparent-20);
+            background-color: var(--lz-black-transparent-95);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
         }
         .mobile-menu ul {
             list-style: none;
@@ -331,9 +337,9 @@
             padding: 0;
             display: grid;
             gap: 1rem;
-        } /* This rule is redundant as it's already defined in .mobile-menu ul */
+        }
         .mobile-menu li {
-            border-bottom: 1px solid rgba(102, 252, 241, 0.18);
+            border-bottom: 1px solid var(--lz-accent-transparent-10);
             padding-bottom: 0.75rem;
         }
         .mobile-menu li:last-child {
@@ -344,9 +350,10 @@
             color: var(--lz-light-gray);
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            padding: 0.85rem 0; /* Consider using a variable for this padding */
-            border-bottom: 1px solid rgba(102, 252, 241, 0.14);
+            letter-spacing: 0.25em;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--lz-accent-transparent-10);
+            transition: color var(--lz-transition-duration) var(--lz-transition-timing-function);
         }
         .mobile-menu a:last-child {
             border-bottom: none;
@@ -355,16 +362,18 @@
             color: var(--lz-accent);
         }
         .mobile-menu .submenu {
-            padding-left: 1rem;
-            margin-top: 0.5rem;
-            border: 1px solid var(--lz-accent);
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            border: 1px solid var(--lz-accent-transparent-20);
+            border-radius: 0.375rem;
+            background-color: var(--lz-black-transparent-95);
         }
         .mobile-menu .submenu a {
-            letter-spacing: 0.14em;
+            letter-spacing: 0.25em;
             font-size: 0.85rem;
             color: var(--lz-light-gray);
-            padding-bottom: 0.6rem;
-            border-bottom: 1px solid var(--lz-accent-dim);
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--lz-accent-transparent-10);
         }
         .mobile-menu .submenu a:last-child {
             border-bottom: none;
