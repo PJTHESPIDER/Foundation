@@ -49,7 +49,6 @@
 .climate-focus-grid {
     max-width: 80rem;
     margin: auto;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .climate-focus-card-title {
@@ -111,7 +110,6 @@
 .economic-focus-grid {
     max-width: 80rem;
     margin: auto;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .economic-focus-card-title {
@@ -747,13 +745,7 @@ body ::selection {
     display: grid;
     grid-template-columns: 1fr;
     gap: 6rem;
-    align-items: center;
-}
-
-@media (min-width: 1024px) {
-    .mission-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    align-items: start;
 }
 
 .mission-quote {
@@ -797,7 +789,7 @@ body ::selection {
 
 .value-card {
     padding: 2.5rem;
-    background-color: rgba(31, 40, 51, 0.2);
+    background-color: #0F1217;
     position: relative;
     transition: border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -850,14 +842,13 @@ body ::selection {
 
 .focus-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1px;
-    background-color: rgba(102, 252, 241, 0.1);
 }
 
 @media (min-width: 768px) {
-    .focus-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .focus-grid:has(.value-card:nth-child(4)) {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1176,7 +1167,6 @@ body ::selection {
 .social-focus-grid {
     max-width: 80rem;
     margin: auto;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .social-focus-card-title {
